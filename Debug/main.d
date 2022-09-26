@@ -22,6 +22,7 @@ main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/pin_map.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/rom.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/sysctl.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/uart.h
+main.obj: ../controllers/bluetooth.h
 
 ../main.c:
 
@@ -66,4 +67,6 @@ C:/ti/tivaware_c_series_2_1_4_178/driverlib/rom.h:
 C:/ti/tivaware_c_series_2_1_4_178/driverlib/sysctl.h:
 
 C:/ti/tivaware_c_series_2_1_4_178/driverlib/uart.h:
+
+../controllers/bluetooth.h:
 
