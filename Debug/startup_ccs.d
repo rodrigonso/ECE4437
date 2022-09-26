@@ -13,6 +13,16 @@ startup_ccs.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/
 startup_ccs.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
 startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_nvic.h
 startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_types.h
+startup_ccs.obj: ../controllers/bluetooth.h
+startup_ccs.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_ints.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_memmap.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/debug.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/gpio.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/interrupt.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/pin_map.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/sysctl.h
+startup_ccs.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/uart.h
 
 ../startup_ccs.c:
 
@@ -39,4 +49,24 @@ C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 C:/ti/tivaware_c_series_2_1_4_178/inc/hw_nvic.h:
 
 C:/ti/tivaware_c_series_2_1_4_178/inc/hw_types.h:
+
+../controllers/bluetooth.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/inc/hw_ints.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/inc/hw_memmap.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/driverlib/debug.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/driverlib/gpio.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/driverlib/interrupt.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/driverlib/pin_map.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/driverlib/sysctl.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/driverlib/uart.h:
 

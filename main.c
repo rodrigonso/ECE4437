@@ -36,7 +36,7 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
 
-#define UART_BAUDRATE 115200
+#include "controllers/bluetooth.h"
 
 //*****************************************************************************
 //
@@ -62,67 +62,23 @@ __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
+uint8_t RED_LED_STATE   = 0x0;
+uint8_t BLUE_LED_STATE  = 0x0;
+uint8_t GREEN_LED_STATE = 0x0;
 
-
-void UART_IntHandler(void)
+void process_input(char ch)
 {
-    uint32_t ui32Status;
+    uint8_t LED_PIN    = 0x0;
+    uint8_t *LED_STATE = &RED_LED_STATE;
 
-    // Get the interrrupt status.
-    ui32Status = UARTIntStatus(UART5_BASE, true);
+    if (ch == 'r') { LED_PIN = GPIO_PIN_1; LED_STATE = &RED_LED_STATE;   }
+    if (ch == 'g') { LED_PIN = GPIO_PIN_3; LED_STATE = &GREEN_LED_STATE; }
+    if (ch == 'b') { LED_PIN = GPIO_PIN_2; LED_STATE = &BLUE_LED_STATE;  }
 
-    // Clear the asserted interrupts.
-    UARTIntClear(UART5_BASE, ui32Status);
+    bool is_led_on = *(LED_STATE) > 0x0;
 
-    // Loop while there are characters in the receive FIFO.
-    while(UARTCharsAvail(UART5_BASE))
-    {
-
-        // Read the next character from the UART and write it back to the UART.
-        UARTCharPutNonBlocking(UART5_BASE, UARTCharGetNonBlocking(UART5_BASE));
-
-        // Blink the LED to show a character transfer is occuring.
-        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2);
-
-        // Delay for 1 millisecond.  Each SysCtlDelay is about 3 clocks.
-        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
-
-        // Turn off the LED
-        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0);
-
-    }
-}
-
-void UART_Send(const uint8_t *pui8Buffer, uint32_t ui32Count)
-{
-
-    // Loop while there are more characters to send.
-    while(ui32Count--)
-    {
-        // Write the next character to the UART.
-        UARTCharPutNonBlocking(UART5_BASE, *pui8Buffer++);
-    }
-}
-
-void UART_Init()
-{
-    IntMasterEnable();
-
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE); // Port used by UART5
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART5); // UART5 module
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF); // Port used by LEDs
-
-    GPIOPinConfigure(GPIO_PE4_U5RX);
-    GPIOPinConfigure(GPIO_PE5_U5TX);
-    GPIOPinTypeUART(GPIO_PORTE_BASE, GPIO_PIN_4 | GPIO_PIN_5);
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
-
-    UARTConfigSetExpClk(UART5_BASE, SysCtlClockGet(), UART_BAUDRATE, (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
-
-    UARTEnable(UART5_BASE);
-
-    IntEnable(INT_UART5);
-    UARTIntEnable(UART5_BASE, UART_INT_RX | UART_INT_RT);
+    GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, (is_led_on ? 0x0 : LED_PIN));
+    *LED_STATE = is_led_on ? 0x0: LED_PIN;
 }
 
 int main(void)
@@ -130,8 +86,8 @@ int main(void)
     // Set the clocking to run directly from the crystal.
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
-    UART_Init();
-    UART_Send((uint8_t *)"\033[2JEnter text: ", 16);
+    Bluetooth_Init(&process_input);
+    Bluetooth_Send((uint8_t *)"\033[2JEnter text: ", 16);
 
     while (1)
     {
