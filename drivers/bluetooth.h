@@ -15,18 +15,18 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
+#include "utils/uartstdio.h"
 
-#ifndef CONTROLLERS_BLUETOOTH_H_
-#define CONTROLLERS_BLUETOOTH_H_
+#include "../config.h"
+#include "led.h"
 
-#define UART_BAUDRATE 115200
+#ifndef DRIVERS_BLUETOOTH_H_
+#define DRIVERS_BLUETOOTH_H_
 
 // Functions
-int Bluetooth_Init(void (*callback)(char));
+void Bluetooth_Init(void);
 void Bluetooth_Send(const uint8_t *pui8Buffer, uint32_t ui32Count);
 void Bluetooth_IntHandler(void);
+void Bluetooth_ProcessInput(void);
 
-// Variables
-void (*interrupt_callback_ptr)(char);
-
-#endif /* CONTROLLERS_BLUETOOTH_H_ */
+#endif /* DRIVERS_BLUETOOTH_H_ */

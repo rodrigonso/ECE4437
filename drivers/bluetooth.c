@@ -5,7 +5,7 @@
  *      Author: Rodrigo Mascarenhas
  */
 
-#include "bluetooth.h"
+#include "../drivers/bluetooth.h"
 
 void Bluetooth_IntHandler(void)
 {
@@ -22,11 +22,12 @@ void Bluetooth_IntHandler(void)
     {
 
         // Read the next character from the UART and write it back to the UART.
-        uint32_t character = UARTCharGetNonBlocking(UART5_BASE);
-        UARTCharPutNonBlocking(UART5_BASE, character);
-        if (interrupt_callback_ptr != 0)
+//        uint32_t character = UARTCharGetNonBlocking(UART5_BASE);
+        char c = UARTCharGet(UART5_BASE);
+        UARTCharPutNonBlocking(UART5_BASE, c);
+        if ((char)c == '\r')
         {
-            interrupt_callback_ptr((char)character);
+            Bluetooth_ProcessInput();
         }
 
         // Blink the LED to show a character transfer is occuring.
@@ -52,45 +53,40 @@ void Bluetooth_Send(const uint8_t *pui8Buffer, uint32_t ui32Count)
     }
 }
 
-int Bluetooth_Init(void (*callback)(char))
+void Bluetooth_Read(void)
+{
+    while(UARTCharsAvail(UART5_BASE))
+       {
+           char c = UARTCharGet(UART5_BASE);
+           UARTCharPutNonBlocking(UART5_BASE, c);
+       }
+}
+
+void Bluetooth_Init(void)
 {
     IntMasterEnable();
 
-    interrupt_callback_ptr = callback;
-
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE); // Port used by UART5
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART5); // UART5 module
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF); // Port used by LEDs
 
     GPIOPinConfigure(GPIO_PE4_U5RX);
     GPIOPinConfigure(GPIO_PE5_U5TX);
     GPIOPinTypeUART(GPIO_PORTE_BASE, GPIO_PIN_4 | GPIO_PIN_5);
-
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1);
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3);
-
     UARTConfigSetExpClk(UART5_BASE, SysCtlClockGet(), UART_BAUDRATE, (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
-
-    UARTEnable(UART5_BASE);
 
     IntEnable(INT_UART5);
     UARTIntEnable(UART5_BASE, UART_INT_RX | UART_INT_RT);
+    UARTEnable(UART5_BASE);
 
-    return 0;
+//    UARTStdioConfig(0, UART_BAUDRATE, 16000000);
+
+    UARTprintf("Bluetooth configured!\r\n");
 }
 
-//int Bluetooth_ProcessInput()
-//{
-//    while(UARTCharsAvail(UART5_BASE))
-//    {
-//        // Read the next character from the UART and write it back to the UART.
-//        uint32_t character = UARTCharGetNonBlocking(UART5_BASE);
-//        Bluetooth_ExecuteInput((char)character);
-//    }
-//
-//    return 0;
-//}
+void Bluetooth_ProcessInput()
+{
+    LED_Toggle(RED_LED);
+}
 
 
 
