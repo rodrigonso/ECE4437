@@ -13,7 +13,10 @@ ORDERED_OBJS += \
 "./main.obj" \
 "./startup_ccs.obj" \
 "./uartstdio.obj" \
-"./controllers/bluetooth.obj" \
+"./drivers/bluetooth.obj" \
+"./drivers/console.obj" \
+"./drivers/distance.obj" \
+"./drivers/led.obj" \
 "../main_ccs.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -27,9 +30,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include controllers/subdir_vars.mk
+-include drivers/subdir_vars.mk
 -include subdir_rules.mk
--include controllers/subdir_rules.mk
+-include drivers/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -161,8 +164,8 @@ ece4437_robot.bin: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "startup_ccs.obj" "uartstdio.obj" "controllers\bluetooth.obj" 
-	-$(RM) "main.d" "startup_ccs.d" "uartstdio.d" "controllers\bluetooth.d" 
+	-$(RM) "main.obj" "startup_ccs.obj" "uartstdio.obj" "drivers\bluetooth.obj" "drivers\console.obj" "drivers\distance.obj" "drivers\led.obj" 
+	-$(RM) "main.d" "startup_ccs.d" "uartstdio.d" "drivers\bluetooth.d" "drivers\console.d" "drivers\distance.d" "drivers\led.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -23,8 +23,10 @@
 //
 //*****************************************************************************
 
+#include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "inc/hw_ints.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/debug.h"
@@ -35,8 +37,12 @@
 #include "driverlib/rom.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
+#include "utils/uartstdio.h"
 
-#include "controllers/bluetooth.h"
+#include "drivers/bluetooth.h"
+#include "drivers/led.h"
+#include "drivers/distance.h"
+#include "drivers/console.h"
 
 //*****************************************************************************
 //
@@ -62,36 +68,23 @@ __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
-uint8_t RED_LED_STATE   = 0x0;
-uint8_t BLUE_LED_STATE  = 0x0;
-uint8_t GREEN_LED_STATE = 0x0;
-
-void process_input(char ch)
-{
-    uint8_t LED_PIN    = 0x0;
-    uint8_t *LED_STATE = &RED_LED_STATE;
-
-    if (ch == 'r') { LED_PIN = GPIO_PIN_1; LED_STATE = &RED_LED_STATE;   }
-    if (ch == 'g') { LED_PIN = GPIO_PIN_3; LED_STATE = &GREEN_LED_STATE; }
-    if (ch == 'b') { LED_PIN = GPIO_PIN_2; LED_STATE = &BLUE_LED_STATE;  }
-
-    bool is_led_on = *(LED_STATE) > 0x0;
-
-    GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, (is_led_on ? 0x0 : LED_PIN));
-    *LED_STATE = is_led_on ? 0x0: LED_PIN;
-}
-
 int main(void)
 {
-    // Set the clocking to run directly from the crystal.
-    SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
-    Bluetooth_Init(&process_input);
-    Bluetooth_Send((uint8_t *)"\033[2JEnter text: ", 16);
+    LED_Init();
+    Bluetooth_Init();
+    Console_Init();
+    Distance_Init();
 
     while (1)
     {
-        // Do nothing
+        uint32_t distance_front = Distance_GetDistanceFront();
+        uint32_t distance_right = Distance_GetDistanceRight();
+
+        UARTprintf("Distance front: %d   |   Distance right: %d\r\n", distance_front, distance_right);
+        LED_Toggle(BLUE_LED);
+        SysCtlDelay(SysCtlClockGet() / 12);
     }
+
 
 }
