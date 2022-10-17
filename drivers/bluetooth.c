@@ -16,30 +16,7 @@ void Bluetooth_IntHandler(void)
 
     // Clear the asserted interrupts.
     UARTIntClear(UART5_BASE, ui32Status);
-
-    // Loop while there are characters in the receive FIFO.
-    while(UARTCharsAvail(UART5_BASE))
-    {
-
-        // Read the next character from the UART and write it back to the UART.
-//        uint32_t character = UARTCharGetNonBlocking(UART5_BASE);
-        char c = UARTCharGet(UART5_BASE);
-        UARTCharPutNonBlocking(UART5_BASE, c);
-        if ((char)c == '\r')
-        {
-            Bluetooth_ProcessInput();
-        }
-
-        // Blink the LED to show a character transfer is occuring.
-//        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2);
-
-        // Delay for 1 millisecond.  Each SysCtlDelay is about 3 clocks.
-//        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
-
-        // Turn off the LED
-//        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0);
-
-    }
+    // TODO: Post swi
 }
 
 void Bluetooth_Send(const uint8_t *pui8Buffer, uint32_t ui32Count)

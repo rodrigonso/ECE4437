@@ -26,6 +26,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>Swi.h</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h</locationURI>
+		</link>
+		<link>
+			<name>hw_ints.h</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/ti/tivaware_c_series_2_1_4_178/inc/hw_ints.h</locationURI>
+		</link>
+		<link>
 			<name>uartstdio.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/ti/tivaware_c_series_2_1_4_178/utils/uartstdio.c</locationURI>

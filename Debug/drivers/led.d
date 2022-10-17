@@ -13,6 +13,7 @@ drivers/led.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/
 drivers/led.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 drivers/led.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
 drivers/led.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h
+drivers/led.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_ints.h
 drivers/led.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_memmap.h
 drivers/led.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/gpio.h
 drivers/led.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/sysctl.h
@@ -42,6 +43,8 @@ C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/inc/hw_ints.h:
 
 C:/ti/tivaware_c_series_2_1_4_178/inc/hw_memmap.h:
 

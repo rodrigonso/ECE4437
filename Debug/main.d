@@ -22,7 +22,6 @@ main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/gpio.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/interrupt.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/pin_map.h
-main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/rom.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/sysctl.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/uart.h
 main.obj: C:/ti/tivaware_c_series_2_1_4_178/utils/uartstdio.h
@@ -37,6 +36,10 @@ main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/adc.h
 main.obj: ../drivers/console.h
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
+main.obj: ../drivers/motor.h
+main.obj: C:/ti/tivaware_c_series_2_1_4_178/driverlib/pwm.h
+main.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_types.h
+main.obj: C:/ti/tivaware_c_series_2_1_4_178/inc/hw_gpio.h
 
 ../main.c:
 
@@ -82,8 +85,6 @@ C:/ti/tivaware_c_series_2_1_4_178/driverlib/interrupt.h:
 
 C:/ti/tivaware_c_series_2_1_4_178/driverlib/pin_map.h:
 
-C:/ti/tivaware_c_series_2_1_4_178/driverlib/rom.h:
-
 C:/ti/tivaware_c_series_2_1_4_178/driverlib/sysctl.h:
 
 C:/ti/tivaware_c_series_2_1_4_178/driverlib/uart.h:
@@ -111,4 +112,12 @@ C:/ti/tivaware_c_series_2_1_4_178/driverlib/adc.h:
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h:
 
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h:
+
+../drivers/motor.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/driverlib/pwm.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/inc/hw_types.h:
+
+C:/ti/tivaware_c_series_2_1_4_178/inc/hw_gpio.h:
 

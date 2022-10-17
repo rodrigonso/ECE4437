@@ -27,6 +27,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
+
 #include "inc/hw_ints.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/debug.h"
@@ -34,7 +35,6 @@
 #include "driverlib/gpio.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/pin_map.h"
-#include "driverlib/rom.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
 #include "utils/uartstdio.h"
@@ -43,6 +43,7 @@
 #include "drivers/led.h"
 #include "drivers/distance.h"
 #include "drivers/console.h"
+#include "drivers/motor.h"
 
 //*****************************************************************************
 //
@@ -68,23 +69,32 @@ __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
-int main(void)
-{
 
+int main(void)
+ {
     LED_Init();
-    Bluetooth_Init();
+//    Bluetooth_Init();
     Console_Init();
-    Distance_Init();
+//    Distance_Init();
+    Motor_Init();
+
+    int speed = 30;
 
     while (1)
     {
-        uint32_t distance_front = Distance_GetDistanceFront();
-        uint32_t distance_right = Distance_GetDistanceRight();
-
-        UARTprintf("Distance front: %d   |   Distance right: %d\r\n", distance_front, distance_right);
-        LED_Toggle(BLUE_LED);
-        SysCtlDelay(SysCtlClockGet() / 12);
+        Motor_Forward();
+        UARTprintf("Speed: %d\r\n", Motor_GetSpeed());
+//        uint32_t distance_front = Distance_GetDistanceFront();
+//        uint32_t distance_right = Distance_GetDistanceRight();
+//        UARTprintf("Distance front: %d   |   Distance right: %d\r\n", distance_front, distance_right);
+        LED_Toggle(GREEN_LED);
+        SysCtlDelay(SysCtlClockGet() / 1);
+        LED_Toggle(GREEN_LED);
+        Motor_Stop();
+        LED_Toggle(RED_LED);
+        SysCtlDelay(SysCtlClockGet() / 1);
+        LED_Toggle(RED_LED);
+        Motor_SetSpeed(speed);
+        speed += 10;
     }
-
-
 }

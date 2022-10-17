@@ -7,9 +7,7 @@
 
 #include "led.h"
 
-uint8_t RED_LED_STATE   = 0x0;
-uint8_t BLUE_LED_STATE  = 0x0;
-uint8_t GREEN_LED_STATE = 0x0;
+uint8_t LED_STATE   = 0x0;
 
 void LED_Init(void)
 {
@@ -20,19 +18,16 @@ void LED_Init(void)
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3);
 }
 
-void LED_Toggle(uint8_t LED)
+void LED_Toggle(uint32_t arg0)
 {
     uint8_t LED_PIN    = 0x0;
-    uint8_t *LED_STATE = &RED_LED_STATE;
 
-    if (LED == RED_LED)   { LED_PIN = GPIO_PIN_1; LED_STATE = &RED_LED_STATE;   }
-    if (LED == GREEN_LED) { LED_PIN = GPIO_PIN_3; LED_STATE = &GREEN_LED_STATE; }
-    if (LED == BLUE_LED)  { LED_PIN = GPIO_PIN_2; LED_STATE = &BLUE_LED_STATE;  }
+    if (arg0 == RED_LED)   { LED_PIN = GPIO_PIN_1; }
+    if (arg0 == GREEN_LED) { LED_PIN = GPIO_PIN_3; }
+    if (arg0 == BLUE_LED)  { LED_PIN = GPIO_PIN_2; }
 
-    bool is_led_on = *(LED_STATE) > 0x0;
-
-    GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, (is_led_on ? 0x0 : LED_PIN));
-    *LED_STATE = is_led_on ? 0x0: LED_PIN;
+    LED_STATE ^= LED_PIN;
+    GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, LED_STATE);
 }
 
 void Led_ToggleRed(void)   { LED_Toggle(RED_LED);   }

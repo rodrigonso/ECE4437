@@ -17,6 +17,7 @@ ORDERED_OBJS += \
 "./drivers/console.obj" \
 "./drivers/distance.obj" \
 "./drivers/led.obj" \
+"./drivers/motor.obj" \
 "../main_ccs.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -147,15 +148,15 @@ all: ece4437_robot.out
 # Tool invocations
 ece4437_robot.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
-	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -O2 --advice:power=all -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --ual -z -m"uart_echo_ccs.map" --stack_size=256 --heap_size=0 -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ece4437_robot_linkInfo.xml" --rom_model -o "ece4437_robot.out" $(ORDERED_OBJS)
+	@echo 'Invoking: Arm Linker'
+	"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --advice:power=all --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"uart_echo_ccs.map" --heap_size=0 --stack_size=256 -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="ece4437_robot_linkInfo.xml" --rom_model -o "ece4437_robot.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
 
 ece4437_robot.bin: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
-	@echo 'Invoking: ARM Hex Utility'
+	@echo 'Invoking: Arm Hex Utility'
 	"C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" --diag_wrap=off -o "ece4437_robot.bin" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
@@ -164,8 +165,8 @@ ece4437_robot.bin: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "startup_ccs.obj" "uartstdio.obj" "drivers\bluetooth.obj" "drivers\console.obj" "drivers\distance.obj" "drivers\led.obj" 
-	-$(RM) "main.d" "startup_ccs.d" "uartstdio.d" "drivers\bluetooth.d" "drivers\console.d" "drivers\distance.d" "drivers\led.d" 
+	-$(RM) "main.obj" "startup_ccs.obj" "uartstdio.obj" "drivers\bluetooth.obj" "drivers\console.obj" "drivers\distance.obj" "drivers\led.obj" "drivers\motor.obj" 
+	-$(RM) "main.d" "startup_ccs.d" "uartstdio.d" "drivers\bluetooth.d" "drivers\console.d" "drivers\distance.d" "drivers\led.d" "drivers\motor.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
