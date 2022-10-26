@@ -41,6 +41,8 @@
 #include <ti/sysbios/BIOS.h>
 #include <ti/sysbios/knl/Semaphore.h>
 #include <ti/sysbios/knl/Task.h>
+#include <ti/sysbios/knl/Swi.h>
+#include <ti/sysbios/hal/Hwi.h>
 
 /* TI-RTOS Header files */
 #include <ti/drivers/GPIO.h>
@@ -51,7 +53,6 @@
 // #include <ti/drivers/Watchdog.h>
 // #include <ti/drivers/WiFi.h>
 
-/* Board Header file */
 #include "Board.h"
 #include <stdbool.h>
 #include <stdint.h>
@@ -67,136 +68,79 @@
 #include "inc/hw_ints.h"
 #include "driverlib/timer.h"
 
-//#define TASKSTACKSIZE   512
-volatile uint32_t ui32Period;
-volatile uint32_t g_ui32Counter;
-extern const ti_sysbios_knl_Semaphore_Handle semLED;
-void toggle_LED(void) {
-    while (1) {
-        Semaphore_pend(semLED, BIOS_WAIT_FOREVER);
-        GPIO_toggle(Board_LED0);
-        SysCtlDelay(750000);
-    }
-}
-void UART_init(void)
+#include "drivers/bluetooth.h"
+#include "drivers/led.h"
+#include "drivers/distance.h"
+#include "drivers/console.h"
+
+Task_Handle led_on;
+Task_Params led_on_params;
+Char led_on_stack[TASKSTACKSIZE];
+
+Task_Handle led_off;
+Task_Params led_off_params;
+Char led_off_stack[TASKSTACKSIZE];
+
+void turnLEDOn(void)
 {
-    //
-    // Enable GPIO port A which is used for UART0 pins.
-    // TODO: change this to whichever GPIO port you are using.
-    //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-
-    //
-    // Configure the pin muxing for UART0 functions on port A0 and A1.
-    // This step is not necessary if your part does not support pin muxing.
-    // TODO: change this to select the port/pin you are using.
-    //
-    GPIOPinConfigure(GPIO_PA0_U0RX);
-    GPIOPinConfigure(GPIO_PA1_U0TX);
-
-    //
-    // Enable UART0 so that we can configure the clock.
-    //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
-
-    //
-    // Use the internal 16MHz oscillator as the UART clock source.
-    //
-    UARTClockSourceSet(UART0_BASE, UART_CLOCK_PIOSC);
-  // UARTClockSourceSet(UART0_BASE, UART_CLOCK_SYSTEM);
-
-    //
-    // Select the alternate (UART) function for these pins.
-    // TODO: change this to select the port/pin you are using.
-    //
-    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-
-    //
-    // Initialize the UART for console I/O.
-    //
-    UARTStdioConfig(0, 115200, 16000000);
-}
-void hardware_init(void)
-{
-
-
-    //Set CPU Clock to 40MHz. 400MHz PLL/2 = 200 DIV 5 = 40MHz
-    SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
-
-    // ADD Tiva-C GPIO setup - enables port, sets pins 1-3 (RGB) pins for output
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
-
-    // Turn on the LED
-    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, 4);
-
-    // Timer 2 setup code
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER2);           // enable Timer 2 periph clks
-    TimerConfigure(TIMER2_BASE, TIMER_CFG_PERIODIC);        // cfg Timer 2 mode - periodic
-
-    ui32Period = (SysCtlClockGet() /2);                     // period = CPU clk div 2 (500ms) (40M/2)*(1/40000000) = 0.5)*
-    TimerLoadSet(TIMER2_BASE, TIMER_A, ui32Period);         // set Timer 2 period
-
-    TimerIntEnable(TIMER2_BASE, TIMER_TIMA_TIMEOUT);        // enables Timer 2 to interrupt CPU
-
-    TimerEnable(TIMER2_BASE, TIMER_A);                      // enable Timer 2
-    UART_init();
-
-}
-
-void hwi_ISR(void) {
-    TimerIntClear(TIMER2_BASE, TIMER_TIMA_TIMEOUT);
-    UARTprintf("Number of interrupts: %d\r", g_ui32Counter);
-    g_ui32Counter++;
-    Semaphore_post(semLED);
-}
-
-//Task_Struct task0Struct;
-//Char task0Stack[TASKSTACKSIZE];
-
-/*
- *  ======== heartBeatFxn ========
- *  Toggle the Board_LED0. The Task_sleep is determined by arg0 which
- *  is configured for the heartBeat Task instance.
- */
-Void heartBeatFxn(UArg arg0, UArg arg1)
-{
-    while (1) {
-        Task_sleep((UInt)arg0);
-        GPIO_toggle(Board_LED0);
+    while (1)
+    {
+        UARTprintf("red\r\n");
+        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
+        LED_Toggle(RED_LED);
+        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
+        LED_Toggle(RED_LED);
+        Task_yield();
     }
 }
 
-/*
- *  ======== main ========
- */
+void turnLEDOff(void)
+{
+    while (1)
+    {
+        UARTprintf("blue\r\n");
+        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
+        LED_Toggle(BLUE_LED);
+        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
+        LED_Toggle(BLUE_LED);
+        Task_yield();
+    }
+}
+
+void ADC_ISR_Test(void)
+{
+    UARTprintf("TEST!\r\n");
+}
+
+void ADC_ISR_Test2(void)
+{
+    UARTprintf("HEY!\r\n");
+}
+
+void ADC_ISR_Test3(void)
+{
+    UARTprintf("TEST");
+}
+
+void ADC_ISR_Test4(void)
+{
+    UARTprintf("TESTTS");
+}
+
 int main(void)
 {
-    //Task_Params taskParams;
+//    SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
-    /* Call board init functions */
-    Board_initGeneral();
-    Board_initGPIO();
-    // Board_initI2C();
-    // Board_initSDSPI();
-    // Board_initSPI();
-    // Board_initUART();
-    // Board_initUSB(Board_USBDEVICE);
-    // Board_initWatchdog();
-    // Board_initWiFi();
+    Distance_Init();
+    LED_Init();
+    Console_Init();
+//    Bluetooth_Init();
+    Motor_Init();
+    PID_Init();
+    Timer_Init();
 
-    /* Construct heartBeat Task  thread */
-    //Task_Params_init(&taskParams);
-    //taskParams.arg0 = 1000;
-    //taskParams.stackSize = TASKSTACKSIZE;
-    //taskParams.stack = &task0Stack;
-    //Task_construct(&task0Struct, (Task_FuncPtr)heartBeatFxn, &taskParams, NULL);
-    hardware_init();
-    /* Turn on user LED */
-    GPIO_write(Board_LED0, Board_LED_ON);
-
-    System_printf("Starting the example\nSystem provider is set to SysMin. "
-                  "Halt the target to view any SysMin contents in ROV.\n");
+    IntMasterEnable();
+    System_printf("Initializing RTOS...\r\n");
     /* SysMin will only print to the console when you call flush or exit */
     System_flush();
 

@@ -13,6 +13,13 @@ ORDERED_OBJS += \
 "./EK_TM4C123GXL.obj" \
 "./main.obj" \
 "./uartstdio.obj" \
+"./controllers/pid.obj" \
+"./drivers/bluetooth.obj" \
+"./drivers/console.obj" \
+"./drivers/distance.obj" \
+"./drivers/led.obj" \
+"./drivers/motor.obj" \
+"./drivers/timer.obj" \
 "../EK_TM4C123GXL.cmd" \
 $(GEN_CMDS__FLAG) \
 -l"C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/grlib/ccs/Debug/grlib.lib" \
@@ -28,7 +35,11 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include controllers/subdir_vars.mk
+-include drivers/subdir_vars.mk
 -include subdir_rules.mk
+-include controllers/subdir_rules.mk
+-include drivers/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -159,8 +170,8 @@ ECE_4437_Robot_v1.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "EK_TM4C123GXL.obj" "main.obj" "uartstdio.obj" 
-	-$(RM) "EK_TM4C123GXL.d" "main.d" "uartstdio.d" 
+	-$(RM) "EK_TM4C123GXL.obj" "main.obj" "uartstdio.obj" "controllers\pid.obj" "drivers\bluetooth.obj" "drivers\console.obj" "drivers\distance.obj" "drivers\led.obj" "drivers\motor.obj" "drivers\timer.obj" 
+	-$(RM) "EK_TM4C123GXL.d" "main.d" "uartstdio.d" "controllers\pid.d" "drivers\bluetooth.d" "drivers\console.d" "drivers\distance.d" "drivers\led.d" "drivers\motor.d" "drivers\timer.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '
