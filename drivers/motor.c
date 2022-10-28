@@ -42,38 +42,41 @@ void Motor_Init(void)
 
     PWMGenEnable(PWM0_BASE, PWM_GEN_3);                     // Enables the timer/counter for a PWM generator block.
 
-    UARTprintf("Motor intialized\r\n");
+//    UARTprintf("Motor intialized\r\n");
+    Bluetooth_Send("Motor initialized!\r\n");
 }
 
 
-void Motor_Start(void)
+void Motor_Start(UArg arg0, UArg arg1)
 {
     PWMOutputState(PWM0_BASE, PWM_OUT_6_BIT, true);         // Enables PWM 6 output.
     PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, true);         // Enables PWM 7 output.
+
     is_motor_enabled = true;
 }
 
-void Motor_Stop(void)
+void Motor_Stop(UArg arg0, UArg arg1)
 {
     PWMOutputState(PWM0_BASE, PWM_OUT_6_BIT, false);         // Disables PWM 6 output.
     PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, false);         // Disables PWM 7 output.
+
     is_motor_enabled = false;
 }
 
-void Motor_Forward(void)
+void Motor_Forward(UArg arg0, UArg arg1)
 {
     GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, 0);           // Writes a value to Port C pin 6.
     GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, 0);           // Writes a value to Port C pin 7.
 
-    Motor_Start();                      // This function enables both motors to move.
+    Motor_Start(0, 0);                      // This function enables both motors to move.
 }
 
-void Motor_Reverse(void)
+void Motor_Reverse(UArg arg0, UArg arg1)
 {
     GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);  // Reverses the direction of the right motor.
     GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, GPIO_PIN_6);  // Reverses the direction of the left motor.
 
-    Motor_Start();                      // This function enables both motors to move.
+    Motor_Start(0, 0);                      // This function enables both motors to move.
 }
 
 bool Motor_IsMotorEnabled(void)
@@ -90,12 +93,12 @@ void Motor_SetSpeed(int32_t new_duty_cycle)
 
     if (new_duty_cycle == 0 && Motor_IsMotorEnabled())
     {
-        Motor_Stop();
+        Motor_Stop(0, 0);
         return;
     }
     else if (new_duty_cycle > 0 && !Motor_IsMotorEnabled())
     {
-        Motor_Start();
+        Motor_Start(0, 0);
         PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, new_duty_cycle * val_load / 100); // Sets the pulse width for the PWM 7 output.
         PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, new_duty_cycle * val_load / 100); // Sets the pulse width for the PWM 6 output.
     }

@@ -12,7 +12,6 @@ CMD_SRCS += \
 ../EK_TM4C123GXL.cmd 
 
 C_SRCS += \
-../EK_TM4C123GXL.c \
 ../main.c \
 ../uartstdio.c 
 
@@ -27,7 +26,6 @@ GEN_MISC_DIRS += \
 ./configPkg/ 
 
 C_DEPS += \
-./EK_TM4C123GXL.d \
 ./main.d \
 ./uartstdio.d 
 
@@ -35,7 +33,6 @@ GEN_OPTS += \
 ./configPkg/compiler.opt 
 
 OBJS += \
-./EK_TM4C123GXL.obj \
 ./main.obj \
 ./uartstdio.obj 
 
@@ -43,12 +40,10 @@ GEN_MISC_DIRS__QUOTED += \
 "configPkg\" 
 
 OBJS__QUOTED += \
-"EK_TM4C123GXL.obj" \
 "main.obj" \
 "uartstdio.obj" 
 
 C_DEPS__QUOTED += \
-"EK_TM4C123GXL.d" \
 "main.d" \
 "uartstdio.d" 
 
@@ -57,7 +52,6 @@ GEN_FILES__QUOTED += \
 "configPkg\compiler.opt" 
 
 C_SRCS__QUOTED += \
-"../EK_TM4C123GXL.c" \
 "../main.c" \
 "../uartstdio.c" 
 

@@ -11,10 +11,16 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <ti/sysbios/knl/Task.h>
 
 #define UART_BAUDRATE 115200
 #define TASKSTACKSIZE   512
 
+typedef struct
+{
+    char name[10];
+    void (*fun_ptr)(UArg arg0, UArg arg1);
+} Command;
 
 // Initialization
 //Task_Handle read_front;

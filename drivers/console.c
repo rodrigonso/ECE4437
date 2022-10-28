@@ -8,10 +8,20 @@
 
 #include "console.h"
 
+int  CNSL_FIFO_IDX = 0;
+int  CNSL_FIFO_CURRENT_IDX = 0;
+char CNSL_FIFO_BUFFER[10];
+
+Command console_command_table[] =
+{
+
+ { "START",  Motor_Start  },
+ { "STOP",   Motor_Stop   },
+
+};
+
 void Console_Init(void)
 {
-    SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
-
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 
@@ -24,8 +34,9 @@ void Console_Init(void)
     UARTIntEnable(UART0_BASE, UART_INT_RX | UART_INT_RT);
     UARTEnable(UART0_BASE);
 
-    UARTStdioConfig(0, UART_BAUDRATE, 16000000);
+    UARTFIFOEnable(UART0_BASE);
 
+    UARTStdioConfig(0, UART_BAUDRATE, SysCtlClockGet());
     UARTprintf("Console configured!\r\n");
 }
 
@@ -45,6 +56,58 @@ void Console_Print(char str[])
     for (i = 0; i < strlen(str); i++)
         UARTCharPut(UART0_BASE, str[i]);
 }
+
+void Console_IntHandler(void)
+{
+    uint32_t ui32Status;
+
+    // Get the interrrupt status.
+    ui32Status = UARTIntStatus(UART0_BASE, true);
+
+    // Clear the asserted interrupts.
+    UARTIntClear(UART0_BASE, ui32Status);
+
+    while (UARTCharsAvail(UART0_BASE))
+    {
+        char c = UARTCharGetNonBlocking(UART0_BASE);
+        UARTCharPutNonBlocking(UART0_BASE, c);
+
+        if (CNSL_FIFO_CURRENT_IDX >= 10 || c == '\r')
+        {
+            CNSL_FIFO_IDX = CNSL_FIFO_CURRENT_IDX;
+            CNSL_FIFO_CURRENT_IDX = 0;
+            Semaphore_post(CONSOLE_SEMA_0);
+            break;
+        }
+        CNSL_FIFO_BUFFER[CNSL_FIFO_CURRENT_IDX++] = c;
+    }
+}
+
+void Console_HandleCommand(void)
+{
+
+    while (1)
+    {
+        Semaphore_pend(CONSOLE_SEMA_0, BIOS_WAIT_FOREVER);
+
+        Command *table_entry = &console_command_table[0];
+        while (table_entry->name)
+        {
+            if (strncmp(table_entry->name, CNSL_FIFO_BUFFER, CNSL_FIFO_IDX) == 0)
+            {
+                UARTprintf("Command received: ");
+                UARTprintf(table_entry->name);
+                UARTprintf("\r\n");
+                table_entry->fun_ptr(0, 0);
+                break;
+            }
+            table_entry++;
+        }
+
+        Task_yield();
+    }
+}
+
 
 
 

@@ -19,19 +19,14 @@ void Timer_Init(void)
     TimerIntEnable(TIMER2_BASE, TIMER_TIMA_TIMEOUT);        // enables Timer 2 to interrupt CPU
     TimerEnable(TIMER2_BASE, TIMER_A);                      // enable Timer 2
 
-    Hwi_Params_init(&TIMER_HWI_0_P);
-    TIMER_HWI_0_P.arg = 5;
-    TIMER_HWI_0_P.priority = 1;
-    TIMER_HWI_0 = Hwi_create(39, (Hwi_FuncPtr)Timer_IntHandler, &TIMER_HWI_0_P, 0);
-
-    UARTprintf("Timer initialized!\r\n");
+//    UARTprintf("Timer initialized!\r\n");
+    Bluetooth_Send("Timer initialized!\r\n");
 }
 
 void Timer_IntHandler(void)
 {
-    UARTprintf("Timer called\r\n");
     TimerIntClear(TIMER2_BASE, TIMER_TIMA_TIMEOUT);
-    Swi_post(PID_SWI_0);
+    Semaphore_post(PID_SEMA_0);
 }
 
 

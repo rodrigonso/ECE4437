@@ -9,24 +9,23 @@
 
 void PID_Init(void)
 {
-    Motor_Forward();
+    Motor_Forward(0, 0);
     Motor_SetSpeed(0);
 
-    // Instantiation
-    Swi_Params_init(&PID_SWI_0_P);
-    PID_SWI_0_P.arg0 = 0;
-    PID_SWI_0_P.arg1 = 0;
-    PID_SWI_0_P.priority = 2;
-    PID_SWI_0 = Swi_create((Swi_FuncPtr)PID_SwiHandler, &PID_SWI_0_P, 0);
-
-    UARTprintf("PID controller intitialized!\r\n");
+//    UARTprintf("PID controller intitialized!\r\n");
+    Bluetooth_Send("PID controller initialized!\r\n");
 }
 
 
-void PID_SwiHandler(void)
+void PID_Run(UArg arg0, UArg arg1)
 {
-    UARTprintf("SWI called\r\n");
-    PID_Calculate();
+    while (1)
+    {
+        Semaphore_pend(PID_SEMA_0, BIOS_WAIT_FOREVER);
+//        UARTprintf("SWI called\r\n");
+        Bluetooth_Send("PID running...");
+        PID_Calculate();
+    }
 }
 
 void PID_Calculate(void)
@@ -45,8 +44,9 @@ void PID_Calculate(void)
 
     motor_speed = (1000 - PID);
 
-    UARTprintf("Calculated motor speed: %d", motor_speed);
-    Motor_SetSpeed(motor_speed);
+    Bluetooth_Send("Speed calculated!\r\n");
+//    UARTprintf("Calculated motor speed: %d", motor_speed);
+//    Motor_SetSpeed(motor_speed);
 }
 
 

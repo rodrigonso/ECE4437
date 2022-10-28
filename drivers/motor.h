@@ -21,6 +21,9 @@
 #include "inc/hw_gpio.h"
 #include "inc/hw_memmap.h"
 #include "utils/uartstdio.h"
+#include <ti/sysbios/knl/Task.h>
+
+#include "drivers/bluetooth.h"
 
 #define MAX_DUTY_CYCLE 1000
 #define MIN_DUTY_CYCLE 0
@@ -30,10 +33,10 @@ uint32_t val_load, pwm_clk;
 bool is_motor_enabled;
 
 void Motor_Init();
-void Motor_Start(void);
-void Motor_Stop(void);
-void Motor_Forward(void);
-void Motor_Reverse(void);
+void Motor_Start(UArg, UArg);
+void Motor_Stop(UArg, UArg);
+void Motor_Forward(UArg, UArg);
+void Motor_Reverse(UArg, UArg);
 void Motor_SetSpeed(int32_t speed);
 bool Motor_IsMotorEnabled(void);
 int32_t Motor_GetSpeed(void);

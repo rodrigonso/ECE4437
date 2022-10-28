@@ -34,29 +34,22 @@ void Distance_Init(void)
     ADCSequenceEnable(ADC0_BASE, 3);
     ADCSequenceEnable(ADC1_BASE, 3);
 
-    ADCIntEnable(ADC0_BASE, 3);
-    ADCIntEnable(ADC1_BASE, 3);
-
-    IntEnable(INT_ADC0SS3);
-    IntEnable(INT_ADC1SS3);
+    Bluetooth_Send("Distance initialized!\r\n");
 }
 
-int32_t Distance_GetDistanceFront(void)
+uint32_t Distance_GetDistanceFront(void)
 {
     ADCProcessorTrigger(ADC0_BASE, 3);
-    while (!ADCIntStatus(ADC0_BASE, 3, false)) {}
     ADCIntClear(ADC0_BASE, 3);
     ADCSequenceDataGet(ADC0_BASE, 3, &distance_front);
     return distance_front;
 }
 
-int32_t Distance_GetDistanceRight(void)
+uint32_t Distance_GetDistanceRight(void)
 {
-    uint32_t test = 0;
     ADCProcessorTrigger(ADC1_BASE, 3);
-    while(!ADCIntStatus(ADC1_BASE, 3, false)) {}
     ADCIntClear(ADC1_BASE, 3);
-    ADCSequenceDataGet(ADC1_BASE, 3, &test);
+    ADCSequenceDataGet(ADC1_BASE, 3, &distance_right);
     return distance_right;
 }
 

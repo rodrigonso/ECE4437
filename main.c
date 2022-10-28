@@ -53,7 +53,6 @@
 // #include <ti/drivers/Watchdog.h>
 // #include <ti/drivers/WiFi.h>
 
-#include "Board.h"
 #include <stdbool.h>
 #include <stdint.h>
 #include "inc/hw_memmap.h"
@@ -73,69 +72,15 @@
 #include "drivers/distance.h"
 #include "drivers/console.h"
 
-Task_Handle led_on;
-Task_Params led_on_params;
-Char led_on_stack[TASKSTACKSIZE];
-
-Task_Handle led_off;
-Task_Params led_off_params;
-Char led_off_stack[TASKSTACKSIZE];
-
-void turnLEDOn(void)
-{
-    while (1)
-    {
-        UARTprintf("red\r\n");
-        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
-        LED_Toggle(RED_LED);
-        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
-        LED_Toggle(RED_LED);
-        Task_yield();
-    }
-}
-
-void turnLEDOff(void)
-{
-    while (1)
-    {
-        UARTprintf("blue\r\n");
-        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
-        LED_Toggle(BLUE_LED);
-        SysCtlDelay(SysCtlClockGet() / (1000 * 3));
-        LED_Toggle(BLUE_LED);
-        Task_yield();
-    }
-}
-
-void ADC_ISR_Test(void)
-{
-    UARTprintf("TEST!\r\n");
-}
-
-void ADC_ISR_Test2(void)
-{
-    UARTprintf("HEY!\r\n");
-}
-
-void ADC_ISR_Test3(void)
-{
-    UARTprintf("TEST");
-}
-
-void ADC_ISR_Test4(void)
-{
-    UARTprintf("TESTTS");
-}
-
 int main(void)
 {
-//    SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+    SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
+//    Console_Init();
+    Bluetooth_Init();
     Distance_Init();
-    LED_Init();
-    Console_Init();
-//    Bluetooth_Init();
     Motor_Init();
+    LED_Init();
     PID_Init();
     Timer_Init();
 

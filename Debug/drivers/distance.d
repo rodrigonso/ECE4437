@@ -26,7 +26,11 @@ drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/utils/uartstdio.h
 drivers/distance.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/std.h
 drivers/distance.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/targets/arm/elf/std.h
@@ -40,9 +44,9 @@ drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types_
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/package.defs.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__prologue.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags__prologue.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
@@ -53,6 +57,12 @@ drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__prologue.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__epilogue.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Memory.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
@@ -73,24 +83,7 @@ drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInsta
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__epilogue.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__prologue.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags__prologue.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags__epilogue.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__epilogue.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log__prologue.h
@@ -105,10 +98,19 @@ drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log__epilogue.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__prologue.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__epilogue.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Queue.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
@@ -140,6 +142,14 @@ drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Queue.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Queue.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Clock_TimerProxy.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
@@ -148,15 +158,6 @@ drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/pac
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/ITaskSupport.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task__epilogue.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Queue.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Clock.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Event.h
@@ -171,20 +172,6 @@ drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/pac
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Event__epilogue.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__prologue.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/package.defs.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
-drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__epilogue.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
@@ -211,28 +198,54 @@ drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__prologue.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/package.defs.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
+drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__epilogue.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi__epilogue.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/Hwi_HwiProxy.h
-drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h
-drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/pid.h
 drivers/distance.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/pwm.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_gpio.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/distance.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
+drivers/distance.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/debug.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/config.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h
-drivers/distance.obj: ../drivers/led.h
-drivers/distance.obj: ../config.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 
 ../drivers/distance.c:
 
@@ -286,7 +299,15 @@ C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h:
 
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h:
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/std.h:
 
@@ -314,11 +335,11 @@ C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/package.defs.h:
 
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
 
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__prologue.h:
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags__prologue.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h:
 
@@ -339,6 +360,18 @@ C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__prologue.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__epilogue.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Memory.h:
 
@@ -380,41 +413,7 @@ C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
 
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error__epilogue.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__prologue.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags__prologue.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags__epilogue.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__epilogue.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h:
 
@@ -444,13 +443,31 @@ C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log__epilogue.h:
 
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__prologue.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Main.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert__epilogue.h:
+
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Queue.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
 
@@ -514,6 +531,22 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Q
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h:
 
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Queue.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
+
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Clock_TimerProxy.h:
 
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
@@ -529,24 +562,6 @@ C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/ITaskSupport.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task__epilogue.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Queue.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Clock.h:
 
@@ -575,34 +590,6 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/T
 C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Event__epilogue.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__prologue.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/package.defs.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
-
-C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__epilogue.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h:
 
@@ -656,23 +643,35 @@ C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
 
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__prologue.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/package.defs.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IGateProvider.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS__epilogue.h:
+
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi__epilogue.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/Hwi_HwiProxy.h:
-
-C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/pid.h:
 
@@ -682,9 +681,13 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/S
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h:
 
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h:
+
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h:
 
@@ -694,9 +697,45 @@ C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/pwm
 
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_gpio.h:
 
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/debug.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/config.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
+
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h:
 
-../drivers/led.h:
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
 
-../config.h:
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
 

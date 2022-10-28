@@ -16,6 +16,8 @@ void LED_Init(void)
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1);
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3);
+
+    Bluetooth_Send("LED initialized!\r\n");
 }
 
 void LED_Toggle(uint32_t arg0)

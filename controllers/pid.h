@@ -19,19 +19,19 @@
 
 #include "../drivers/motor.h"
 #include "../drivers/distance.h"
+#include "../drivers/bluetooth.h"
 
 #define PID_SETPOINT      1600
 #define PID_KP            0.25
 #define PID_KI            0.04
 #define PID_KD            0.01
 
+extern Semaphore_Handle PID_SEMA_0;
+
 float pid_curr_error, pid_prev_error;
 
 void PID_Init(void);
 void PID_Calculate(void);
 void PID_SwiHandler(void);
-
-Swi_Handle PID_SWI_0;
-Swi_Params PID_SWI_0_P;
 
 #endif /* CONTROLLERS_PID_H_ */
