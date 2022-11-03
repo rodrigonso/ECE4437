@@ -15,6 +15,8 @@
 #include "driverlib/gpio.h"
 #include "driverlib/sysctl.h"
 
+#include "drivers/bluetooth.h"
+
 void LED_Init(void);
 void LED_Toggle(uint32_t LED);
 void Led_ToggleRed(void);

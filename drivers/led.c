@@ -32,6 +32,18 @@ void LED_Toggle(uint32_t arg0)
     GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, LED_STATE);
 }
 
+void LED_Blink(UArg arg0, UArg arg1)
+{
+    while (1)
+    {
+        LED_Toggle(BLUE_LED);
+        SysCtlDelay(10000);
+        LED_Toggle(BLUE_LED);
+        SysCtlDelay(10000);
+        Task_yield();
+    }
+}
+
 void Led_ToggleRed(void)   { LED_Toggle(RED_LED);   }
 void LED_ToggleGreen(void) { LED_Toggle(GREEN_LED); }
 void LED_ToggleBlue(void)  { LED_Toggle(BLUE_LED);  }

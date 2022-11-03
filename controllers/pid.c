@@ -10,8 +10,8 @@
 void PID_Init(void)
 {
     Motor_Forward(0, 0);
-    Motor_SetSpeed(0);
-
+    Motor_SetSpeed(1000, MOTOR_RIGHT);
+    Motor_SetSpeed(1000, MOTOR_LEFT);
 //    UARTprintf("PID controller intitialized!\r\n");
     Bluetooth_Send("PID controller initialized!\r\n");
 }
@@ -28,25 +28,38 @@ void PID_Run(UArg arg0, UArg arg1)
     }
 }
 
+void PID_Print(void)
+{
+    char *out = (char*)malloc(8 * sizeof(char));
+    if (out == NULL) return;
+    uint32_t dist = Distance_GetDistanceRight();
+    sprintf(out, "Distance1: %d, Distance2: %d  |  SpeedL: %d\r\n", dist, Distance_GetDistanceFront(), motor_speed_left);
+    Bluetooth_Send(out);
+    free(out);
+    Task_yield();
+}
+
 void PID_Calculate(void)
 {
-    int32_t motor_speed = 0;
     float P, I, D, PID;
 
-    pid_curr_error = PID_SETPOINT - Distance_GetDistanceRight();
+    pid_curr_error = PID_SETPOINT - Distance_GetDistanceFront();
 
     P = PID_KP * pid_curr_error;                    // Present error
     I = PID_KI * (pid_curr_error + pid_prev_error); // Past error
     D = PID_KD * (pid_curr_error - pid_prev_error); // Rate of error change
 
-    PID = (P + I + D);
     pid_prev_error = pid_curr_error;
+    PID = (P + I + D);
 
-    motor_speed = (1000 - PID);
+    motor_speed_left = (1000 - PID);
 
     Bluetooth_Send("Speed calculated!\r\n");
+    Motor_SetSpeed(motor_speed_left, MOTOR_LEFT);
+//    Motor_SetSpeed(speed_right, MOTOR_RIGHT);
+
+    PID_Print();
 //    UARTprintf("Calculated motor speed: %d", motor_speed);
-//    Motor_SetSpeed(motor_speed);
 }
 
 

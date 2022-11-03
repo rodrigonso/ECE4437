@@ -26,18 +26,23 @@
 #include "drivers/bluetooth.h"
 
 #define MAX_DUTY_CYCLE 1000
-#define MIN_DUTY_CYCLE 0
+#define MIN_DUTY_CYCLE 1
 
-uint16_t duty_cycle;
+enum MOTORS
+{
+    MOTOR_LEFT,
+    MOTOR_RIGHT,
+};
+
+uint16_t duty_cycle_left, duty_cycle_right;
 uint32_t val_load, pwm_clk;
-bool is_motor_enabled;
 
 void Motor_Init();
 void Motor_Start(UArg, UArg);
 void Motor_Stop(UArg, UArg);
 void Motor_Forward(UArg, UArg);
 void Motor_Reverse(UArg, UArg);
-void Motor_SetSpeed(int32_t speed);
+void Motor_SetSpeed(int32_t speed, int motor);
 bool Motor_IsMotorEnabled(void);
 int32_t Motor_GetSpeed(void);
 

@@ -9,8 +9,8 @@
 
 void Motor_Init(void)
 {
-    is_motor_enabled = false;
-    duty_cycle = 100;                                        // Default motors duty speed of 10% out of 100%
+    duty_cycle_left = 100;
+    duty_cycle_right = 100;
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);             // Enables PWM1 peripheral.
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);             // Enables PWM0 Peripheral.
@@ -37,8 +37,8 @@ void Motor_Init(void)
 
     PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, val_load);  // Sets the period of a PWM generator.
 
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, duty_cycle * val_load / 100); // Sets the pulse width for the PWM 6 output.
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, duty_cycle * val_load / 100); // Sets the pulse width for the PWM 7 output.
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, duty_cycle_left * val_load / 100); // Sets the pulse width for the PWM 6 output.
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, duty_cycle_right * val_load / 100); // Sets the pulse width for the PWM 7 output.
 
     PWMGenEnable(PWM0_BASE, PWM_GEN_3);                     // Enables the timer/counter for a PWM generator block.
 
@@ -51,16 +51,12 @@ void Motor_Start(UArg arg0, UArg arg1)
 {
     PWMOutputState(PWM0_BASE, PWM_OUT_6_BIT, true);         // Enables PWM 6 output.
     PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, true);         // Enables PWM 7 output.
-
-    is_motor_enabled = true;
 }
 
 void Motor_Stop(UArg arg0, UArg arg1)
 {
     PWMOutputState(PWM0_BASE, PWM_OUT_6_BIT, false);         // Disables PWM 6 output.
     PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, false);         // Disables PWM 7 output.
-
-    is_motor_enabled = false;
 }
 
 void Motor_Forward(UArg arg0, UArg arg1)
@@ -79,36 +75,14 @@ void Motor_Reverse(UArg arg0, UArg arg1)
     Motor_Start(0, 0);                      // This function enables both motors to move.
 }
 
-bool Motor_IsMotorEnabled(void)
+void Motor_SetSpeed(int32_t duty_cycle, int motor)
 {
-    return is_motor_enabled;
+    if (duty_cycle > MAX_DUTY_CYCLE) duty_cycle = MAX_DUTY_CYCLE;
+    if (duty_cycle < MIN_DUTY_CYCLE) duty_cycle = MIN_DUTY_CYCLE;
+
+    if (motor == MOTOR_RIGHT)  { PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, duty_cycle * val_load / 100); duty_cycle_right = duty_cycle;  }
+    if (motor == MOTOR_LEFT)   { PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, duty_cycle * val_load / 100); duty_cycle_left = duty_cycle; }
 }
-
-void Motor_SetSpeed(int32_t new_duty_cycle)
-{
-    if (new_duty_cycle > MAX_DUTY_CYCLE) new_duty_cycle = MAX_DUTY_CYCLE;
-    if (new_duty_cycle < MIN_DUTY_CYCLE) new_duty_cycle = MIN_DUTY_CYCLE;
-
-    duty_cycle = new_duty_cycle;
-
-    if (new_duty_cycle == 0 && Motor_IsMotorEnabled())
-    {
-        Motor_Stop(0, 0);
-        return;
-    }
-    else if (new_duty_cycle > 0 && !Motor_IsMotorEnabled())
-    {
-        Motor_Start(0, 0);
-        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, new_duty_cycle * val_load / 100); // Sets the pulse width for the PWM 7 output.
-        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, new_duty_cycle * val_load / 100); // Sets the pulse width for the PWM 6 output.
-    }
-}
-
-int32_t Motor_GetSpeed(void)
-{
-    return duty_cycle;
-}
-
 
 
 
