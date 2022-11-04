@@ -9,10 +9,13 @@
 
 void PID_Init(void)
 {
-    Motor_Forward(0, 0);
-    Motor_SetSpeed(1000, MOTOR_RIGHT);
-    Motor_SetSpeed(1000, MOTOR_LEFT);
-//    UARTprintf("PID controller intitialized!\r\n");
+    Motor_Forward(MOTOR_LEFT);
+    Motor_Forward(MOTOR_RIGHT);
+
+    Motor_SetSpeed(MAX_SPEED, MOTOR_RIGHT);
+    Motor_SetSpeed(MAX_SPEED, MOTOR_LEFT);
+
+    should_uturn = false;
     Bluetooth_Send("PID controller initialized!\r\n");
 }
 
@@ -22,9 +25,15 @@ void PID_Run(UArg arg0, UArg arg1)
     while (1)
     {
         Semaphore_pend(PID_SEMA_0, BIOS_WAIT_FOREVER);
-//        UARTprintf("SWI called\r\n");
         Bluetooth_Send("PID running...");
-        PID_Calculate();
+
+        if (should_uturn)
+            PID_UTurn();
+        else
+            PID_Follow();
+
+        PID_Print();
+        Task_yield();
     }
 }
 
@@ -36,31 +45,45 @@ void PID_Print(void)
     sprintf(out, "Distance1: %d, Distance2: %d  |  SpeedL: %d\r\n", dist, Distance_GetDistanceFront(), motor_speed_left);
     Bluetooth_Send(out);
     free(out);
-    Task_yield();
 }
 
-void PID_Calculate(void)
+void PID_Follow(void)
 {
-    float P, I, D, PID;
+    Motor_Forward(MOTOR_LEFT);
+    Motor_Forward(MOTOR_RIGHT);
 
-    pid_curr_error = PID_SETPOINT - Distance_GetDistanceFront();
+    float P, I, D, PID, steering_val, I_prev = 0;
 
-    P = PID_KP * pid_curr_error;                    // Present error
-    I = PID_KI * (pid_curr_error + pid_prev_error); // Past error
-    D = PID_KD * (pid_curr_error - pid_prev_error); // Rate of error change
+    pid_curr_error =  100 * ((float)PID_SETPOINT - Distance_GetDistanceRight()) / PID_SETPOINT;
+
+    P = PID_KP * pid_curr_error;
+    I = PID_KI * (I_prev + pid_curr_error * 0.05);
+    D = PID_KD * (pid_curr_error - pid_prev_error) / 0.05;
+
+    PID = (P + I + D);
+    steering_val = fabs(PID);
+
+    // Too far turn right
+    if (pid_curr_error > 0)
+        Motor_TurnRight(steering_val);
+
+    // Too close turn left
+    else
+        Motor_TurnLeft(steering_val);
 
     pid_prev_error = pid_curr_error;
-    PID = (P + I + D);
+    I_prev = I;
 
-    motor_speed_left = (1000 - PID);
-
-    Bluetooth_Send("Speed calculated!\r\n");
-    Motor_SetSpeed(motor_speed_left, MOTOR_LEFT);
-//    Motor_SetSpeed(speed_right, MOTOR_RIGHT);
-
-    PID_Print();
-//    UARTprintf("Calculated motor speed: %d", motor_speed);
+    should_uturn = (Distance_GetDistanceFront() > UTURN_MAX);
 }
+
+void PID_UTurn(void)
+{
+    Motor_UTurn();
+    if (Distance_GetDistanceFront() < UTURN_MIN)
+        should_uturn = false;
+}
+
 
 
 

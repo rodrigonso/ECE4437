@@ -22,18 +22,23 @@
 #include "../drivers/distance.h"
 #include "../drivers/bluetooth.h"
 
-#define PID_SETPOINT      2600
-#define PID_KP            0.05
-#define PID_KI            0.02
-#define PID_KD            0.1
+#define PID_SETPOINT      1600
+#define PID_KP            2.0
+#define PID_KI            0.1
+#define PID_KD            0.09
+
+#define UTURN_MAX         2600
+#define UTURN_MIN         1000
 
 extern Semaphore_Handle PID_SEMA_0;
+extern Semaphore_Handle BT_SEMA_1;
 
 float pid_curr_error, pid_prev_error;
-uint32_t motor_speed_left;
+uint32_t motor_speed_left, motor_speed_right;
+bool should_uturn;
 
 void PID_Init(void);
-void PID_Calculate(void);
+void PID_Follow(void);
 void PID_Run(UArg, UArg);
 void PID_Print(void);
 

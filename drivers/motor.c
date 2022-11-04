@@ -7,10 +7,19 @@
 
 #include "motor.h"
 
+/*
+ *  Left motor  -> PWM_OUT_6
+ *  Right motor -> PWM_OUT_7
+ *
+ *
+ *
+ *
+*/
+
 void Motor_Init(void)
 {
-    duty_cycle_left = 100;
-    duty_cycle_right = 100;
+    speed_left = MAX_SPEED;
+    speed_right = MAX_SPEED;
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);             // Enables PWM1 peripheral.
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);             // Enables PWM0 Peripheral.
@@ -30,15 +39,12 @@ void Motor_Init(void)
     GPIOPinConfigure(GPIO_PC5_M0PWM7);                      // Configures the alternate function of a GPIO Port C pin 5.
     GPIOPinConfigure(GPIO_PC4_M0PWM6);                      // Configures the alternate function of a GPIO Port C pin 4.
 
-    pwm_clk = SysCtlClockGet() / 64;                        // A fraction of the PWM clock.
-    val_load = (pwm_clk / 100) - 1;                         // Gets the period of PWM generator, measured in clock ticks.
-
     PWMGenConfigure(PWM0_BASE, PWM_GEN_3, PWM_GEN_MODE_DOWN); //Configures a PWM generator.
 
-    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, val_load);  // Sets the period of a PWM generator.
+    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, PERIOD);  // Sets the period of a PWM generator.
 
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, duty_cycle_left * val_load / 100); // Sets the pulse width for the PWM 6 output.
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, duty_cycle_right * val_load / 100); // Sets the pulse width for the PWM 7 output.
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, PERIOD * speed_left / 100); // Sets the pulse width for the PWM 6 output.
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, PERIOD * speed_right / 100); // Sets the pulse width for the PWM 7 output.
 
     PWMGenEnable(PWM0_BASE, PWM_GEN_3);                     // Enables the timer/counter for a PWM generator block.
 
@@ -59,30 +65,67 @@ void Motor_Stop(UArg arg0, UArg arg1)
     PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, false);         // Disables PWM 7 output.
 }
 
-void Motor_Forward(UArg arg0, UArg arg1)
+void Motor_Forward(int motor)
 {
-    GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, 0);           // Writes a value to Port C pin 6.
-    GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, 0);           // Writes a value to Port C pin 7.
+    if (motor == MOTOR_RIGHT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, 0);
+    if (motor == MOTOR_LEFT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, 0);
 
-    Motor_Start(0, 0);                      // This function enables both motors to move.
+    Motor_Start(0, 0);
 }
 
-void Motor_Reverse(UArg arg0, UArg arg1)
+void Motor_Reverse(int motor)
 {
-    GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);  // Reverses the direction of the right motor.
-    GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, GPIO_PIN_6);  // Reverses the direction of the left motor.
+    if (motor == MOTOR_RIGHT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);
+    if (motor == MOTOR_LEFT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, GPIO_PIN_6);
 
-    Motor_Start(0, 0);                      // This function enables both motors to move.
+    Motor_Start(0, 0);
 }
 
-void Motor_SetSpeed(int32_t duty_cycle, int motor)
+void Motor_SetSpeed(uint32_t speed, int motor)
 {
-    if (duty_cycle > MAX_DUTY_CYCLE) duty_cycle = MAX_DUTY_CYCLE;
-    if (duty_cycle < MIN_DUTY_CYCLE) duty_cycle = MIN_DUTY_CYCLE;
+    if (speed > MAX_SPEED) speed = MAX_SPEED;
+    if (speed < MIN_SPEED) speed = MIN_SPEED;
 
-    if (motor == MOTOR_RIGHT)  { PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, duty_cycle * val_load / 100); duty_cycle_right = duty_cycle;  }
-    if (motor == MOTOR_LEFT)   { PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, duty_cycle * val_load / 100); duty_cycle_left = duty_cycle; }
+    if (motor == MOTOR_RIGHT)  { PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, PERIOD * speed * 0.01); speed_right = speed;  }
+    if (motor == MOTOR_LEFT)   { PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, PERIOD * speed * 0.01); speed_left = speed; }
 }
 
+uint32_t Motor_GetSpeed(int motor)
+{
+    if (motor == MOTOR_RIGHT) return speed_right;
+    if (motor == MOTOR_LEFT) return speed_left;
+
+    else return 0;
+}
+
+void Motor_TurnLeft(int steering)
+{
+    if (steering > MAX_STEERING) steering = MAX_STEERING;
+
+    // Left motor
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, (int)(PERIOD * (MAX_SPEED - steering) * 0.01));
+
+    // Right motor
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, (int)(PERIOD * MAX_SPEED * 0.01));
+}
+
+void Motor_TurnRight(int steering)
+{
+    if (steering > MAX_STEERING) steering = MAX_STEERING;
+
+    // Left motor
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, (int)(PERIOD * MAX_SPEED * 0.01));
+
+    // Right motor
+    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, (int)(PERIOD * (MAX_SPEED - steering) * 0.01));
+}
+
+void Motor_UTurn(void)
+{
+    Motor_Reverse(MOTOR_LEFT);
+    Motor_Forward(MOTOR_RIGHT);
+    Motor_SetSpeed(MAX_SPEED, MOTOR_LEFT);
+    Motor_SetSpeed(MAX_SPEED, MOTOR_RIGHT);
+}
 
 
