@@ -18,8 +18,8 @@
 
 void Motor_Init(void)
 {
-    speed_left = MAX_SPEED;
-    speed_right = MAX_SPEED;
+    speed_left = MIN_SPEED;
+    speed_right = MIN_SPEED;
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);             // Enables PWM1 peripheral.
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);             // Enables PWM0 Peripheral.
@@ -43,23 +43,19 @@ void Motor_Init(void)
 
     PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, PERIOD);  // Sets the period of a PWM generator.
 
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6, PERIOD * speed_left / 100); // Sets the pulse width for the PWM 6 output.
-    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_7, PERIOD * speed_right / 100); // Sets the pulse width for the PWM 7 output.
-
     PWMGenEnable(PWM0_BASE, PWM_GEN_3);                     // Enables the timer/counter for a PWM generator block.
 
-//    UARTprintf("Motor intialized\r\n");
     Bluetooth_Send("Motor initialized!\r\n");
 }
 
 
-void Motor_Start(UArg arg0, UArg arg1)
+void Motor_Start(void)
 {
     PWMOutputState(PWM0_BASE, PWM_OUT_6_BIT, true);         // Enables PWM 6 output.
     PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, true);         // Enables PWM 7 output.
 }
 
-void Motor_Stop(UArg arg0, UArg arg1)
+void Motor_Stop(void)
 {
     PWMOutputState(PWM0_BASE, PWM_OUT_6_BIT, false);         // Disables PWM 6 output.
     PWMOutputState(PWM0_BASE, PWM_OUT_7_BIT, false);         // Disables PWM 7 output.
@@ -70,7 +66,7 @@ void Motor_Forward(int motor)
     if (motor == MOTOR_RIGHT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, 0);
     if (motor == MOTOR_LEFT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, 0);
 
-    Motor_Start(0, 0);
+    Motor_Start();
 }
 
 void Motor_Reverse(int motor)
@@ -78,7 +74,7 @@ void Motor_Reverse(int motor)
     if (motor == MOTOR_RIGHT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_7, GPIO_PIN_7);
     if (motor == MOTOR_LEFT) GPIOPinWrite(GPIO_PORTC_BASE, GPIO_PIN_6, GPIO_PIN_6);
 
-    Motor_Start(0, 0);
+    Motor_Start();
 }
 
 void Motor_SetSpeed(uint32_t speed, int motor)

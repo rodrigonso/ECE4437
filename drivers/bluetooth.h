@@ -21,6 +21,7 @@
 #include <ti/sysbios/BIOS.h>
 
 #include "../config.h"
+#include "controllers/control.h"
 #include "drivers/led.h"
 #include "drivers/motor.h"
 
@@ -35,5 +36,6 @@ void Bluetooth_Send(char str[]);
 void Bluetooth_IntHandler(void);
 void Bluetooth_CommandHandler(UArg, UArg);
 void Bluetooth_ProcessInput(void);
+void Bluetooth_EraseBuffer(void);
 
 #endif /* DRIVERS_BLUETOOTH_H_ */

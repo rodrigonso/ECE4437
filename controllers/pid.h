@@ -41,5 +41,6 @@ void PID_Init(void);
 void PID_Follow(void);
 void PID_Run(UArg, UArg);
 void PID_Print(void);
+void PID_UTurn(void);
 
 #endif /* CONTROLLERS_PID_H_ */

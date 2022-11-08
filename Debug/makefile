@@ -12,11 +12,13 @@ GEN_CMDS__FLAG := -l"configPkg/linker.cmd"
 ORDERED_OBJS += \
 "./main.obj" \
 "./uartstdio.obj" \
+"./controllers/control.obj" \
 "./controllers/pid.obj" \
 "./drivers/bluetooth.obj" \
 "./drivers/console.obj" \
 "./drivers/distance.obj" \
 "./drivers/led.obj" \
+"./drivers/light_sensor.obj" \
 "./drivers/motor.obj" \
 "./drivers/timer.obj" \
 "../EK_TM4C123GXL.cmd" \
@@ -169,8 +171,8 @@ ECE_4437_Robot_v1.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "uartstdio.obj" "controllers\pid.obj" "drivers\bluetooth.obj" "drivers\console.obj" "drivers\distance.obj" "drivers\led.obj" "drivers\motor.obj" "drivers\timer.obj" 
-	-$(RM) "main.d" "uartstdio.d" "controllers\pid.d" "drivers\bluetooth.d" "drivers\console.d" "drivers\distance.d" "drivers\led.d" "drivers\motor.d" "drivers\timer.d" 
+	-$(RM) "main.obj" "uartstdio.obj" "controllers\control.obj" "controllers\pid.obj" "drivers\bluetooth.obj" "drivers\console.obj" "drivers\distance.obj" "drivers\led.obj" "drivers\light_sensor.obj" "drivers\motor.obj" "drivers\timer.obj" 
+	-$(RM) "main.d" "uartstdio.d" "controllers\control.d" "controllers\pid.d" "drivers\bluetooth.d" "drivers\console.d" "drivers\distance.d" "drivers\led.d" "drivers\light_sensor.d" "drivers\motor.d" "drivers\timer.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '

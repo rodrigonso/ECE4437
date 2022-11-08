@@ -14,8 +14,8 @@ char BT_FIFO_BUFFER[10];
 Command bluetooth_command_table[] =
 {
 
- { "START",  Motor_Start  },
- { "STOP",   Motor_Stop   },
+ { "START",  &Control_Start  },
+ { "STOP",   &Control_Stop   },
 
 };
 
@@ -63,7 +63,14 @@ void Bluetooth_IntHandler(void)
             Semaphore_post(BLUETOOTH_SEMA_0);
             break;
         }
-        BT_FIFO_BUFFER[BT_FIFO_CURRENT_IDX++] = c;
+
+        if (c != '\b')
+            BT_FIFO_BUFFER[BT_FIFO_CURRENT_IDX++] = c;
+        else
+        {
+            BT_FIFO_BUFFER[--BT_FIFO_CURRENT_IDX] = (char) 0;
+            UARTCharPutNonBlocking(UART5_BASE, (char) 0);
+        }
     }
 }
 
@@ -82,12 +89,13 @@ void Bluetooth_CommandHandler(UArg arg0, UArg arg1)
                 Bluetooth_Send("Command received: ");
                 Bluetooth_Send(table_entry->name);
                 Bluetooth_Send("\r\n");
-                table_entry->fun_ptr(0, 0);
+                table_entry->fun_ptr();
                 break;
             }
             table_entry++;
         }
 
+        Bluetooth_EraseBuffer();
         Task_yield();
     }
 }
@@ -113,10 +121,13 @@ void Bluetooth_Read(void)
        }
 }
 
-
-void Bluetooth_ProcessInput()
+void Bluetooth_EraseBuffer(void)
 {
-    LED_Toggle(RED_LED);
+    int i;
+    for (i = 0; i <= BT_FIFO_IDX; i++)
+        BT_FIFO_BUFFER[i] = (char)0;
+
+    BT_FIFO_IDX = 0;
 }
 
 

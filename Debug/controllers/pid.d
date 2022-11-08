@@ -225,12 +225,14 @@ controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/pack
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/config.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
+controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h
+controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
-controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 controllers/pid.obj: ../drivers/distance.h
 controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h
 controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h
@@ -702,6 +704,10 @@ C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/config.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h:
 
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
+
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
@@ -710,9 +716,9 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/S
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
 
-C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h:
 
-C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
 
 ../drivers/distance.h:
 

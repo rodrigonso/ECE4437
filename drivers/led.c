@@ -32,18 +32,36 @@ void LED_Toggle(uint32_t arg0)
     GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, LED_STATE);
 }
 
+void LED_Enable(int LED)
+{
+    uint8_t LED_PIN    = 0x0;
+
+    if (LED == RED_LED)   { LED_PIN = GPIO_PIN_1; }
+    if (LED == GREEN_LED) { LED_PIN = GPIO_PIN_3; }
+    if (LED == BLUE_LED)  { LED_PIN = GPIO_PIN_2; }
+
+    GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, LED_PIN);
+}
+
+void LED_Disable(int LED)
+{
+    uint8_t LED_PIN    = 0x0;
+
+    if (LED == RED_LED)   { LED_PIN = GPIO_PIN_1; }
+    if (LED == GREEN_LED) { LED_PIN = GPIO_PIN_3; }
+    if (LED == BLUE_LED)  { LED_PIN = GPIO_PIN_2; }
+
+    GPIOPinWrite(GPIO_PORTF_BASE, LED_PIN, 0);
+}
+
 void LED_Blink(UArg arg0, UArg arg1)
 {
     while (1)
     {
-        LED_Toggle(BLUE_LED);
+        LED_Toggle(GREEN_LED);
         SysCtlDelay(10000);
         LED_Toggle(BLUE_LED);
         SysCtlDelay(10000);
         Task_yield();
     }
 }
-
-void Led_ToggleRed(void)   { LED_Toggle(RED_LED);   }
-void LED_ToggleGreen(void) { LED_Toggle(GREEN_LED); }
-void LED_ToggleBlue(void)  { LED_Toggle(BLUE_LED);  }

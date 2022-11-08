@@ -71,6 +71,8 @@
 #include "drivers/led.h"
 #include "drivers/distance.h"
 #include "drivers/console.h"
+#include "drivers/light_sensor.h"
+#include "controllers/control.h"
 
 int main(void)
 {
@@ -81,8 +83,10 @@ int main(void)
     Distance_Init();
     Motor_Init();
     LED_Init();
+    Control_Init();
     PID_Init();
     Timer_Init();
+    LightSensor_Init();
 
     IntMasterEnable();
     System_printf("Initializing RTOS...\r\n");

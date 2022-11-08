@@ -26,7 +26,8 @@ void Timer_Init(void)
 void Timer_IntHandler(void)
 {
     TimerIntClear(TIMER2_BASE, TIMER_TIMA_TIMEOUT);
-    Semaphore_post(PID_SEMA_0);
+    if (Control_GetState() == SYSTEM_START)
+        Semaphore_post(PID_SEMA_0);
 }
 
 

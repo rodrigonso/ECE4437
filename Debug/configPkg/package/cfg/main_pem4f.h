@@ -35,7 +35,7 @@ extern const ti_sysbios_knl_Task_Handle PID_TASK_0;
 extern const ti_sysbios_knl_Semaphore_Handle PID_SEMA_0;
 
 #include <ti/sysbios/knl/Task.h>
-extern const ti_sysbios_knl_Task_Handle LED_TASK_0;
+extern const ti_sysbios_knl_Task_Handle LIGHTSENSOR_TASK_0;
 
 extern int xdc_runtime_Startup__EXECFXN__C;
 

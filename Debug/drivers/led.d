@@ -186,7 +186,7 @@ drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/config.h
 drivers/led.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h
 drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
 drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h
-drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
+drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h
 drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/pwm.h
 drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h
@@ -195,6 +195,8 @@ drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages
 drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h
+drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
 drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 
 ../drivers/led.c:
@@ -569,7 +571,7 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/T
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h:
 
-C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
 
@@ -586,6 +588,10 @@ C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
 

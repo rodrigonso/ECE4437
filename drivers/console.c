@@ -98,7 +98,7 @@ void Console_HandleCommand(void)
                 UARTprintf("Command received: ");
                 UARTprintf(table_entry->name);
                 UARTprintf("\r\n");
-                table_entry->fun_ptr(0, 0);
+                table_entry->fun_ptr();
                 break;
             }
             table_entry++;

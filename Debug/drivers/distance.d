@@ -235,12 +235,14 @@ drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/pac
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/config.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
-drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
@@ -722,6 +724,10 @@ C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/config.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h:
 
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
+
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
@@ -730,9 +736,9 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/S
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
 
-C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h:
 
-C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h:
 

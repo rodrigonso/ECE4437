@@ -39,8 +39,8 @@ enum MOTORS
 uint32_t speed_right, speed_left;
 
 void Motor_Init(void);
-void Motor_Start(UArg, UArg);
-void Motor_Stop(UArg, UArg);
+void Motor_Start(void);
+void Motor_Stop(void);
 void Motor_Forward(int);
 void Motor_Reverse(int);
 void Motor_SetSpeed(uint32_t, int);

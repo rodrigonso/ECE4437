@@ -19,7 +19,7 @@
 typedef struct
 {
     char name[10];
-    void (*fun_ptr)(UArg arg0, UArg arg1);
+    void (*fun_ptr)(void);
 } Command;
 
 // Initialization

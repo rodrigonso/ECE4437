@@ -18,10 +18,9 @@
 #include "drivers/bluetooth.h"
 
 void LED_Init(void);
-void LED_Toggle(uint32_t LED);
-void Led_ToggleRed(void);
-void LED_ToggleGreen(void);
-void LED_ToggleBlue(void);
+void LED_Toggle(uint32_t);
+void LED_Enable(int);
+void LED_Disable(int);
 
 enum LEDS
 {

@@ -9,14 +9,8 @@
 
 void PID_Init(void)
 {
-    Motor_Forward(MOTOR_LEFT);
-    Motor_Forward(MOTOR_RIGHT);
-
-    Motor_SetSpeed(MAX_SPEED, MOTOR_RIGHT);
-    Motor_SetSpeed(MAX_SPEED, MOTOR_LEFT);
-
     should_uturn = false;
-    Bluetooth_Send("PID controller initialized!\r\n");
+    Bluetooth_Send("PID initialized!\r\n");
 }
 
 
@@ -25,14 +19,12 @@ void PID_Run(UArg arg0, UArg arg1)
     while (1)
     {
         Semaphore_pend(PID_SEMA_0, BIOS_WAIT_FOREVER);
-        Bluetooth_Send("PID running...");
 
         if (should_uturn)
             PID_UTurn();
         else
             PID_Follow();
 
-        PID_Print();
         Task_yield();
     }
 }
