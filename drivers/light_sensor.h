@@ -39,6 +39,8 @@ enum SENSOR_STATES
     TWO_LINES
 };
 
+uint32_t pinValue;
+
 void LightSensor_Init(void);
 void LightSensor_CheckLine(void);
 void LightSensor_Read(UArg arg0, UArg arg1);
