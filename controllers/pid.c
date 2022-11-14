@@ -7,8 +7,28 @@
 
 #include "pid.h"
 
+int data_count = 0;
+MODBUS_PACKET data_ping;
+MODBUS_PACKET data_pong;
+MODBUS_PACKET* data_curr;
+MODBUS_PACKET* data_prev;
+
 void PID_Init(void)
 {
+    data_ping.mb.colon = ':';
+    data_ping.mb.address = 1;
+    data_ping.mb.checksum = 1;
+    data_ping.mb.cr = '\r';
+    data_ping.mb.lf = '\n';
+    data_ping.data_raw[25] = '\0';
+
+    data_pong.mb.colon = ':';
+    data_pong.mb.address = 1;
+    data_pong.mb.checksum = 1;
+    data_pong.mb.cr = '\r';
+    data_pong.mb.lf = '\n';
+    data_pong.data_raw[25] = '\0';
+
     should_uturn = false;
     Bluetooth_Send("PID initialized!\r\n");
 }
@@ -27,16 +47,6 @@ void PID_Run(UArg arg0, UArg arg1)
 
         Task_yield();
     }
-}
-
-void PID_Print(void)
-{
-    char *out = (char*)malloc(8 * sizeof(char));
-    if (out == NULL) return;
-    uint32_t dist = Distance_GetDistanceRight();
-    sprintf(out, "Distance1: %d, Distance2: %d  |  SpeedL: %d\r\n", dist, Distance_GetDistanceFront(), motor_speed_left);
-    Bluetooth_Send(out);
-    free(out);
 }
 
 void PID_Follow(void)
@@ -75,6 +85,39 @@ void PID_UTurn(void)
     if (Distance_GetDistanceFront() < UTURN_MIN)
         should_uturn = false;
 }
+
+void PID_SendData(UArg arg0, UArg arg1)
+{
+    while (1)
+    {
+        Semaphore_pend(PID_SEMA_1, BIOS_WAIT_FOREVER);
+
+        int d = abs(pid_curr_error / PID_SETPOINT * 255);
+        if (data_count < 20)
+        {
+            LED_Disable(BLUE_LED);
+            if (d > 255) d = 255;
+            data_curr->mb.data[data_count++] = (char) d;
+        }
+        else
+        {
+            LED_Enable(BLUE_LED);
+            data_prev = data_curr;
+            if (data_curr = &data_pong) data_curr = &data_ping;
+            else data_curr = &data_pong;
+
+            data_count = 0;
+            PID_Print();
+        }
+
+    }
+}
+
+void PID_Print(void)
+{
+    Bluetooth_Send(data_prev->data_raw);
+}
+
 
 
 

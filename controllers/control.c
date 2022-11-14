@@ -33,6 +33,16 @@ void Control_Stop(void)
     LED_Enable(RED_LED);
 }
 
+void Control_Test(void)
+{
+    LED_Disable(GREEN_LED);
+    LED_Disable(RED_LED);
+    system_state = SYSTEM_TEST;
+    Motor_Stop();
+    Bluetooth_Send("System in Testing mode!\r\n");
+    LED_Enable(BLUE_LED);
+}
+
 void Control_SetState(int state)
 {
     if (state == SYSTEM_STOP) Control_Stop();

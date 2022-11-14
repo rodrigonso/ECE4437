@@ -29,13 +29,11 @@
 #include "drivers/bluetooth.h"
 
 extern Semaphore_Handle PID_SEMA_0;
+extern Semaphore_Handle LIGHT_SEMA_0;
 
-uint32_t ui32Period;
+uint32_t ui32Period1, ui32Period2;
 
 void Timer_Init(void);
 void Timer_IntHandler(void);
-
-//Hwi_Handle TIMER_HWI_0;
-//Hwi_Params TIMER_HWI_0_P;
 
 #endif /* DRIVERS_TIMER_H_ */

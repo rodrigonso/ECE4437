@@ -29,7 +29,7 @@
 #define LINE_COUNT_MIN 240
 #define LINE_COUNT_MAX 20000
 
-extern Semaphore_Handle PID_SEMA_0;
+extern Semaphore_Handle LIGHT_SEMA_0;
 
 enum SENSOR_STATES
 {
@@ -42,7 +42,7 @@ enum SENSOR_STATES
 uint32_t pinValue;
 
 void LightSensor_Init(void);
-void LightSensor_CheckLine(void);
 void LightSensor_Read(UArg arg0, UArg arg1);
+void testPrint(int);
 
 #endif /* DRIVERS_LIGHT_SENSOR_H_ */

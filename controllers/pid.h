@@ -31,15 +31,31 @@
 #define UTURN_MIN         1000
 
 extern Semaphore_Handle PID_SEMA_0;
+extern Semaphore_Handle PID_SEMA_1;
 extern Semaphore_Handle BT_SEMA_1;
 
 float pid_curr_error, pid_prev_error;
 uint32_t motor_speed_left, motor_speed_right;
 bool should_uturn;
 
+typedef struct {
+    char colon;
+    char address;
+    char data[20];
+    char checksum;
+    char cr;
+    char lf;
+} MODBUS_DATA;
+
+typedef union {
+    char data_raw[26];
+    MODBUS_DATA mb;
+} MODBUS_PACKET;
+
 void PID_Init(void);
 void PID_Follow(void);
 void PID_Run(UArg, UArg);
+void PID_SendData(UArg, UArg);
 void PID_Print(void);
 void PID_UTurn(void);
 

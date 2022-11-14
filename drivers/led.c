@@ -22,7 +22,7 @@ void LED_Init(void)
 
 void LED_Toggle(uint32_t arg0)
 {
-    uint8_t LED_PIN    = 0x0;
+    uint8_t LED_PIN = 0x0;
 
     if (arg0 == RED_LED)   { LED_PIN = GPIO_PIN_1; }
     if (arg0 == GREEN_LED) { LED_PIN = GPIO_PIN_3; }
@@ -34,7 +34,7 @@ void LED_Toggle(uint32_t arg0)
 
 void LED_Enable(int LED)
 {
-    uint8_t LED_PIN    = 0x0;
+    uint8_t LED_PIN = 0x0;
 
     if (LED == RED_LED)   { LED_PIN = GPIO_PIN_1; }
     if (LED == GREEN_LED) { LED_PIN = GPIO_PIN_3; }
@@ -45,7 +45,7 @@ void LED_Enable(int LED)
 
 void LED_Disable(int LED)
 {
-    uint8_t LED_PIN    = 0x0;
+    uint8_t LED_PIN = 0x0;
 
     if (LED == RED_LED)   { LED_PIN = GPIO_PIN_1; }
     if (LED == GREEN_LED) { LED_PIN = GPIO_PIN_3; }

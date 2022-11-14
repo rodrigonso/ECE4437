@@ -16,6 +16,7 @@ Command bluetooth_command_table[] =
 
  { "START",  &Control_Start  },
  { "STOP",   &Control_Stop   },
+ { "TEST",   &Control_Test   },
 
 };
 

@@ -5,9 +5,6 @@
  *      Author: Rodrigo Mascarenhas
  */
 
-#ifndef DRIVERS_DISTANCE_C_
-#define DRIVERS_DISTANCE_C_
-
 #include "distance.h"
 
 void Distance_Init(void)
@@ -52,5 +49,3 @@ uint32_t Distance_GetDistanceRight(void)
     ADCSequenceDataGet(ADC1_BASE, 3, &distance_right);
     return distance_right;
 }
-
-#endif /* DRIVERS_DISTANCE_C_ */
