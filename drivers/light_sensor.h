@@ -28,6 +28,7 @@
 
 #define LINE_COUNT_MIN 240
 #define LINE_COUNT_MAX 20000
+#define LIGHT_SENSOR_MAX 15000
 
 extern Semaphore_Handle LIGHT_SEMA_0;
 

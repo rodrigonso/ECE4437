@@ -48,9 +48,13 @@ void Timer_IntHandler2(void)
     int state = Control_GetState();
 
     if (state == SYSTEM_START)
+    {
         Semaphore_post(PID_SEMA_0);
-    else if (state == SYSTEM_START || state == SYSTEM_TEST)
         Semaphore_post(LIGHT_SEMA_0);
+    }
+
+    if (state == SYSTEM_TEST) Semaphore_post(LIGHT_SEMA_0);
+
 }
 
 

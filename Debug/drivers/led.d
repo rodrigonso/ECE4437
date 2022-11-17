@@ -198,6 +198,13 @@ drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages
 drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h
 drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h
 drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h
+drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h
+drivers/led.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
+drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/led.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/led.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h
 
 ../drivers/led.c:
 
@@ -594,4 +601,18 @@ C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/control.h:
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/led.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/motor.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h:
 

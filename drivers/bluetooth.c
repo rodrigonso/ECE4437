@@ -17,7 +17,6 @@ Command bluetooth_command_table[] =
  { "START",  &Control_Start  },
  { "STOP",   &Control_Stop   },
  { "TEST",   &Control_Test   },
-
 };
 
 void Bluetooth_Init(void)
@@ -111,6 +110,14 @@ void Bluetooth_Send(char str[])
         // Write the next character to the UART.
         UARTCharPut(UART5_BASE, str[i++]);
     }
+}
+
+void Bluetooth_SendInt(int val)
+{
+    char * out = (char*)malloc(16*sizeof(char));
+    sprintf(out, "%d", val);
+    Bluetooth_Send(out);
+    free(out);
 }
 
 void Bluetooth_Read(void)

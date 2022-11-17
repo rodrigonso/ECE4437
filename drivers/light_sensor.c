@@ -7,6 +7,8 @@
 
 #include "light_sensor.h"
 
+int line_count = 0;
+
 void LightSensor_Init(void)
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
@@ -34,7 +36,21 @@ void LightSensor_Read(UArg arg0, UArg arg1) {
         }
 
         testPrint(count);
-//        if (count > 20000) Control_Stop();
+        if (count >= 10000)
+        {
+            Bluetooth_Send("Line detected!\r\n");
+            line_count++;
+        } else {
+            line_count = 0;
+        }
+
+        if (line_count > 2)
+        {
+//            Control_Stop();
+            Bluetooth_Send("STOP! ");
+            testPrint(line_count);
+            line_count = 0;
+        }
         Task_yield();
     }
 }

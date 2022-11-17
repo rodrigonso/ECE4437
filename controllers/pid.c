@@ -109,7 +109,7 @@ void PID_SendData(UArg arg0, UArg arg1)
             data_count = 0;
             PID_Print();
         }
-
+        Task_yield();
     }
 }
 

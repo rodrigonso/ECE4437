@@ -18,6 +18,7 @@ void Control_Init(void)
 void Control_Start(void)
 {
     LED_Disable(RED_LED);
+    LED_Disable(BLUE_LED);
     system_state = SYSTEM_START;
     Motor_Start();
     Bluetooth_Send("System Started!\r\n");
@@ -27,6 +28,7 @@ void Control_Start(void)
 void Control_Stop(void)
 {
     LED_Disable(GREEN_LED);
+    LED_Disable(BLUE_LED);
     system_state = SYSTEM_STOP;
     Motor_Stop();
     Bluetooth_Send("System Stopped!\r\n");

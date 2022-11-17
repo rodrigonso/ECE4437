@@ -24,6 +24,7 @@
 #include "controllers/control.h"
 #include "drivers/led.h"
 #include "drivers/motor.h"
+#include "drivers/light_sensor.h"
 
 #ifndef DRIVERS_BLUETOOTH_H_
 #define DRIVERS_BLUETOOTH_H_
@@ -33,6 +34,7 @@ extern Semaphore_Handle BLUETOOTH_SEMA_0;
 // Functions
 void Bluetooth_Init(void);
 void Bluetooth_Send(char str[]);
+void Bluetooth_SendInt(int);
 void Bluetooth_IntHandler(void);
 void Bluetooth_CommandHandler(UArg, UArg);
 void Bluetooth_ProcessInput(void);
