@@ -26,24 +26,20 @@
 #include "drivers/bluetooth.h"
 #include "controllers/control.h"
 
-#define LINE_COUNT_MIN 240
-#define LINE_COUNT_MAX 20000
-#define LIGHT_SENSOR_MAX 15000
+#define LINE_COUNT_MIN 5
+#define LINE_COUNT_MAX 20
+#define LIGHT_SENSOR_THRESHOLD 3500
 
 extern Semaphore_Handle LIGHT_SEMA_0;
 
-enum SENSOR_STATES
+enum LINES
 {
-    IDLE,
-    READY,
-    ONE_LINE,
-    TWO_LINES
+    THIN_LINE,
+    THICK_LINE
 };
-
-uint32_t pinValue;
 
 void LightSensor_Init(void);
 void LightSensor_Read(UArg arg0, UArg arg1);
-void testPrint(int);
+int LightSensor_CheckLine(int);
 
 #endif /* DRIVERS_LIGHT_SENSOR_H_ */

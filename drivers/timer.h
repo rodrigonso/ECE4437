@@ -21,6 +21,7 @@
 #include "inc/hw_types.h"
 #include "inc/hw_ints.h"
 #include "driverlib/timer.h"
+#include "inc/hw_timer.h"
 
 #include <ti/sysbios/knl/Semaphore.h>
 #include <ti/sysbios/hal/Hwi.h>
@@ -31,9 +32,11 @@
 extern Semaphore_Handle PID_SEMA_0;
 extern Semaphore_Handle LIGHT_SEMA_0;
 
-uint32_t ui32Period1, ui32Period2;
+uint32_t ui32Period1, ui32Period2, ui32Period3;
 
 void Timer_Init(void);
 void Timer_IntHandler(void);
+void Timer_RaceStart(void);
+float Timer_RaceStop(void);
 
 #endif /* DRIVERS_TIMER_H_ */

@@ -240,20 +240,21 @@ controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bl
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h
-controllers/pid.obj: ../drivers/distance.h
-controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h
-controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h
-controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h
-controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h
+controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/pid.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+controllers/pid.obj: ../drivers/distance.h
+controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h
+controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h
+controllers/pid.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h
+controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h
 controllers/pid.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 controllers/pid.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
@@ -741,21 +742,13 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h:
 
-../drivers/distance.h:
-
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h:
-
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h:
-
-C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h:
-
-C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h:
-
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
 
@@ -768,6 +761,16 @@ C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+../drivers/distance.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
 

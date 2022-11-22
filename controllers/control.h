@@ -10,6 +10,7 @@
 
 #include "drivers/motor.h"
 #include "drivers/led.h"
+#include "drivers/timer.h"
 
 enum STATES
 {
@@ -24,5 +25,7 @@ void Control_Start(void);
 void Control_Stop(void);
 void Control_Test(void);
 int Control_GetState(void);
+bool Control_GetSendData(void);
+void Control_SetSendData(bool);
 
 #endif /* CONTROLLERS_CONTROL_H_ */

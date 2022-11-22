@@ -76,7 +76,6 @@ void Bluetooth_IntHandler(void)
 
 void Bluetooth_CommandHandler(UArg arg0, UArg arg1)
 {
-
     while (1)
     {
         Semaphore_pend(BLUETOOTH_SEMA_0, BIOS_WAIT_FOREVER);
@@ -116,6 +115,14 @@ void Bluetooth_SendInt(int val)
 {
     char * out = (char*)malloc(16*sizeof(char));
     sprintf(out, "%d", val);
+    Bluetooth_Send(out);
+    free(out);
+}
+
+void Bluetooth_SendFloat(float val)
+{
+    char * out = (char*)malloc(16*sizeof(char));
+    sprintf(out, "%f", val);
     Bluetooth_Send(out);
     free(out);
 }

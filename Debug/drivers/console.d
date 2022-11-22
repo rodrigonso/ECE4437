@@ -210,6 +210,62 @@ drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bl
 drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h
+drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi__prologue.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/package.defs.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/Hwi_HwiProxy.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi__epilogue.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi__prologue.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/package/package.defs.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h
+drivers/console.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi__epilogue.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/Hwi_HwiProxy.h
+drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/pid.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h
+drivers/console.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
+drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h
+drivers/console.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h
+drivers/console.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h
+drivers/console.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h
+drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
+drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
+drivers/console.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
+drivers/console.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 
 ../drivers/console.c:
 
@@ -630,4 +686,116 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/S
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi__prologue.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/package.defs.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IModule.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/Hwi_HwiProxy.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi__epilogue.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Types.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/IInstance.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi__prologue.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/package/package.defs.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Diags.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Log.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Assert.h:
+
+C:/ti/xdctools_3_32_00_06_core/packages/xdc/runtime/Error.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/interfaces/IHwi.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/family/arm/m3/Hwi__epilogue.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/package/Hwi_HwiProxy.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/controllers/pid.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Swi.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Task.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/hal/Hwi.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h:
+
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
 

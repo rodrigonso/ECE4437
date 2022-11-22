@@ -35,6 +35,7 @@ extern Semaphore_Handle BLUETOOTH_SEMA_0;
 void Bluetooth_Init(void);
 void Bluetooth_Send(char str[]);
 void Bluetooth_SendInt(int);
+void Bluetooth_SendFloat(float);
 void Bluetooth_IntHandler(void);
 void Bluetooth_CommandHandler(UArg, UArg);
 void Bluetooth_ProcessInput(void);

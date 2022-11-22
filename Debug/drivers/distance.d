@@ -30,6 +30,7 @@ drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/t
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/systick.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h
+drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/distance.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/std.h
 drivers/distance.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
@@ -250,6 +251,7 @@ drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/b
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h
+drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h
 drivers/distance.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 drivers/distance.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
@@ -320,6 +322,8 @@ C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/sys
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
 
@@ -760,6 +764,8 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/S
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h:
+
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h:
 

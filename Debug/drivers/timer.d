@@ -25,6 +25,7 @@ drivers/timer.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/includ
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.h
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_ints.h
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h
+drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/timer.obj: C:/ti/xdctools_3_32_00_06_core/packages/xdc/std.h
 drivers/timer.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
@@ -245,12 +246,12 @@ drivers/timer.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/blue
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
 drivers/timer.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h
+drivers/timer.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
 drivers/timer.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h
 drivers/timer.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h
 drivers/timer.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h
 drivers/timer.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h
-drivers/timer.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h
 drivers/timer.obj: C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h
 drivers/timer.obj: C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.h
@@ -310,6 +311,8 @@ C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_types.
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_ints.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/timer.h:
+
+C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/inc/hw_timer.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/knl/Semaphore.h:
 
@@ -751,6 +754,8 @@ C:/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/BIOS.
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/light_sensor.h:
 
+C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
+
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/distance.h:
 
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/math.h:
@@ -760,8 +765,6 @@ C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_defs.h:
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_limits.h:
 
 C:/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b/driverlib/adc.h:
-
-C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/timer.h:
 
 C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/drivers/bluetooth.h:
 

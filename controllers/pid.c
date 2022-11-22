@@ -7,11 +7,13 @@
 
 #include "pid.h"
 
+bool send_data = false;
 int data_count = 0;
 MODBUS_PACKET data_ping;
 MODBUS_PACKET data_pong;
 MODBUS_PACKET* data_curr;
 MODBUS_PACKET* data_prev;
+
 
 void PID_Init(void)
 {
@@ -79,18 +81,12 @@ void PID_Follow(void)
     should_uturn = (Distance_GetDistanceFront() > UTURN_MAX);
 }
 
-void PID_UTurn(void)
-{
-    Motor_UTurn();
-    if (Distance_GetDistanceFront() < UTURN_MIN)
-        should_uturn = false;
-}
-
 void PID_SendData(UArg arg0, UArg arg1)
 {
     while (1)
     {
         Semaphore_pend(PID_SEMA_1, BIOS_WAIT_FOREVER);
+        if (Control_GetState() == SYSTEM_STOP || Control_GetSendData() == false) Task_yield();
 
         int d = abs(pid_curr_error / PID_SETPOINT * 255);
         if (data_count < 20)
@@ -107,20 +103,19 @@ void PID_SendData(UArg arg0, UArg arg1)
             else data_curr = &data_pong;
 
             data_count = 0;
-            PID_Print();
+            Bluetooth_Send(data_prev->data_raw);
+            Bluetooth_Send("\r\n");
         }
-        Task_yield();
     }
 }
 
-void PID_Print(void)
+
+void PID_UTurn(void)
 {
-    Bluetooth_Send(data_prev->data_raw);
+    Motor_UTurn();
+    if (Distance_GetDistanceFront() < UTURN_MIN)
+        should_uturn = false;
 }
-
-
-
-
 
 
 

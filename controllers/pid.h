@@ -32,7 +32,6 @@
 
 extern Semaphore_Handle PID_SEMA_0;
 extern Semaphore_Handle PID_SEMA_1;
-extern Semaphore_Handle BT_SEMA_1;
 
 float pid_curr_error, pid_prev_error;
 uint32_t motor_speed_left, motor_speed_right;

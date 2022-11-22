@@ -7,6 +7,7 @@
 #include "control.h"
 
 int system_state;
+bool should_send_data = false;
 
 void Control_Init(void)
 {
@@ -22,6 +23,9 @@ void Control_Start(void)
     system_state = SYSTEM_START;
     Motor_Start();
     Bluetooth_Send("System Started!\r\n");
+
+    Timer_RaceStart();
+
     LED_Enable(GREEN_LED);
 }
 
@@ -32,6 +36,10 @@ void Control_Stop(void)
     system_state = SYSTEM_STOP;
     Motor_Stop();
     Bluetooth_Send("System Stopped!\r\n");
+
+    float running_time = Timer_RaceStop();
+    Bluetooth_SendFloat(running_time);
+
     LED_Enable(RED_LED);
 }
 
@@ -54,4 +62,14 @@ void Control_SetState(int state)
 int Control_GetState(void)
 {
     return system_state;
+}
+
+bool Control_GetSendData(void)
+{
+    return should_send_data;
+}
+
+void Control_SetSendData(bool val)
+{
+    should_send_data = val;
 }
