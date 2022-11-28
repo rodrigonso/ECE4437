@@ -5,7 +5,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.target_config.ccxml.Stellaris In-Circuit Debug Interface_0/CORTEX_M4_0" value="${build_artifact:ECE_4437_Robot_v1}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.target_config.ccxml.Stellaris In-Circuit Debug Interface_0/CORTEX_M4_0" value="ECE_4437_Robot_v1"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:ECE_4437_Robot_v1}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.target_config.ccxml.Stellaris In-Circuit Debug Interface_0/CORTEX_M4_0" value="C:\Users\Rodrigo\workspace_v10\ECE_4437_Robot_v1\Debug\ECE_4437_Robot_v1.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.target_config.ccxml.Stellaris In-Circuit Debug Interface_0/CORTEX_M4_0" value="C:\Users\samee\workspace_v10\ECE_4437_Robot_v1\Debug\ECE_4437_Robot_v1.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/ECE_4437_Robot_v1"/>
 </listAttribute>

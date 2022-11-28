@@ -38,7 +38,9 @@ void Control_Stop(void)
     Bluetooth_Send("System Stopped!\r\n");
 
     float running_time = Timer_RaceStop();
+    Bluetooth_Send("Race time: ");
     Bluetooth_SendFloat(running_time);
+    Bluetooth_Send(" seconds");
 
     LED_Enable(RED_LED);
 }

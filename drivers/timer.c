@@ -78,8 +78,8 @@ void Timer_IntHandler3(void)
 void Timer_RaceStart(void)
 {
     TimerLoadSet(TIMER4_BASE, TIMER_A, 0xFFFFFFFF);
-    TimerEnable(TIMER4_BASE, TIMER_A);
     HWREG(TIMER3_BASE + TIMER_O_TAV) = 0;
+    TimerEnable(TIMER4_BASE, TIMER_A);
 }
 
 float Timer_RaceStop(void)
@@ -88,7 +88,7 @@ float Timer_RaceStop(void)
     TimerLoadSet(TIMER4_BASE, TIMER_A, 0xFFFFFFFF);
     HWREG(TIMER3_BASE + TIMER_O_TAV) = 0;
 
-    return (TimerValueGet(TIMER4_BASE, TIMER_A) / SysCtlClockGet());
+    return (float)((float)TimerValueGet(TIMER4_BASE, TIMER_A) / SysCtlClockGet());
 }
 
 

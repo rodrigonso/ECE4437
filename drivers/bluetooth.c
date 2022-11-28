@@ -127,6 +127,7 @@ void Bluetooth_SendFloat(float val)
     free(out);
 }
 
+
 void Bluetooth_Read(void)
 {
     while(UARTCharsAvail(UART5_BASE))

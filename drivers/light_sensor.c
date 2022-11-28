@@ -43,24 +43,24 @@ void LightSensor_Read(UArg arg0, UArg arg1) {
         }
         else
         {
-            if (LightSensor_CheckLine(count) == THIN_LINE)
+            if (LightSensor_CheckLine(line_count) == THIN_LINE)
             {
                 Bluetooth_Send("Thin line\r\n");
-//                if (Control_GetSendData() == true)
-//                {
-//                    LED_Disable(BLUE_LED);
-//                    Control_SetSendData(false);
-//                    Bluetooth_Send("Stop sending\r\n");
-//                } else {
-//                    LED_Enable(BLUE_LED);
-//                    Control_SetSendData(true);
-//                    Bluetooth_Send("Start sending\r\n");
-//                }
+                if (Control_GetSendData() == true)
+                {
+                    LED_Disable(BLUE_LED);
+                    Control_SetSendData(false);
+                    Bluetooth_Send("Stop sending\r\n");
+                } else {
+                    LED_Enable(BLUE_LED);
+                    Control_SetSendData(true);
+                    Bluetooth_Send("Start sending\r\n");
+                }
             }
             line_count = 0;
         }
 
-        if (LightSensor_CheckLine(count) == THICK_LINE)
+        if (LightSensor_CheckLine(line_count) == THICK_LINE)
         {
             Bluetooth_Send("Finish line...stopping!\r\n");
             Control_Stop();
@@ -73,7 +73,7 @@ void LightSensor_Read(UArg arg0, UArg arg1) {
 
 int LightSensor_CheckLine(int count)
 {
-    if (count >= 20) return THICK_LINE;
-    else if (count > 5 && count < 20) return THIN_LINE;
+    if (count >= 23) return THICK_LINE;
+    else if (count > 5 && count < 23) return THIN_LINE;
     else return -1;
 }

@@ -7,7 +7,7 @@
         <srcFile name="package/cfg/main_pem4f.c"/>
     </sources>
     <configscripts>
-        <srcFile name="C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/main.cfg"/>
+        <srcFile name="C:/Users/samee/workspace_v10/ECE_4437_Robot_v1/main.cfg"/>
     </configscripts>
     <makefiles>
         <srcFile name="package.mak" src="package.bld"/>
@@ -44,7 +44,7 @@
         isPartial="false"
         xCfgScript="package/cfg/main_pem4f.cfg"
         xCfgPrefix="package/cfg/main_pem4f"
-        cfgScript="C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/main.cfg"
+        cfgScript="C:/Users/samee/workspace_v10/ECE_4437_Robot_v1/main.cfg"
         cfgArgs="null"
         />
     </configurations>
@@ -56,7 +56,7 @@
         profile="release"
         xCfgScript="package/cfg/main_pem4f.cfg"
         xCfgPrefix="package/cfg/main_pem4f"
-        cfgScript="C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/main.cfg"
+        cfgScript="C:/Users/samee/workspace_v10/ECE_4437_Robot_v1/main.cfg"
         cfgArgs="null"
         />
     </executables>

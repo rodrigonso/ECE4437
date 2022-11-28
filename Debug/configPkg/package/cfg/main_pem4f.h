@@ -49,6 +49,9 @@ extern const ti_sysbios_hal_Hwi_Handle TIMER_HWI_1;
 #include <ti/sysbios/hal/Hwi.h>
 extern const ti_sysbios_hal_Hwi_Handle TIMER_HWI_2;
 
+#include <ti/sysbios/knl/Task.h>
+extern const ti_sysbios_knl_Task_Handle PID_TASK_1;
+
 extern int xdc_runtime_Startup__EXECFXN__C;
 
 extern int xdc_runtime_Startup__RESETFXN__C;

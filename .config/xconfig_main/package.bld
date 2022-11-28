@@ -11,7 +11,7 @@ var makeAssembly = false;
 var Executable = xdc.module('xdc.bld.Executable');
 
 var exeOpts = new Executable.Attrs({
-        cfgScript: 'C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/main.cfg',
+        cfgScript: 'C:/Users/samee/workspace_v10/ECE_4437_Robot_v1/main.cfg',
         profile: 'release',
         cfgHome: 'xconfig_main',
 });
@@ -40,8 +40,8 @@ else {
 }
 
 var thisObj = {
-    cfg:        'C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/main.cfg',
-    outputPath: 'C:/Users/Rodrigo/workspace_v10/ECE_4437_Robot_v1/.config/xconfig_main',
+    cfg:        'C:/Users/samee/workspace_v10/ECE_4437_Robot_v1/main.cfg',
+    outputPath: 'C:/Users/samee/workspace_v10/ECE_4437_Robot_v1/.config/xconfig_main',
     exeName:    'main' + suffix,
     exeIntName: 'main' + suffix.replace('.', '_'),
     targ:       targ,

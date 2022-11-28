@@ -93,7 +93,8 @@ void PID_SendData(UArg arg0, UArg arg1)
         {
             LED_Disable(BLUE_LED);
             if (d > 255) d = 255;
-            data_curr->mb.data[data_count++] = (char) d;
+            data_curr->mb.data[data_count] = (char) d;
+            data_count++;
         }
         else
         {
@@ -103,9 +104,18 @@ void PID_SendData(UArg arg0, UArg arg1)
             else data_curr = &data_pong;
 
             data_count = 0;
-            Bluetooth_Send(data_prev->data_raw);
+//            Bluetooth_Send("HERE\r\n");
+//            Bluetooth_Send(data_prev->data_raw);
+//            Bluetooth_Send("\r\n");
+            int i;
+            for (i = 0; i < 26; i++)
+            {
+                Bluetooth_SendInt(data_prev->data_raw[i]);
+                Bluetooth_Send(" ");
+            }
             Bluetooth_Send("\r\n");
         }
+        Task_yield();
     }
 }
 
