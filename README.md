@@ -6,7 +6,7 @@ This robot is built on the Tiva-C platform and it is a project from the ECE 4437
 ## Requirements
 
 1. Robot must be able to make right turns and U-turns when a dead end is reached using a PID controller
-2. Robot must communicate with user PC via bluetooth by using UART
+2. Robot must communicate with user PC via bluetooth by using UART -- accept commands and also send data.
 3. Robot must send back PID error data via bluetooth to PC
 4. Robot must be able to detect thin black lines, and thick black lines (finish line)
 5. Must use a TI-RTOS implementation for the robot's operation
